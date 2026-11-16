@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>eFPS Step-by-Step Portal & eAFS Guide | ClearBooks Advisory</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary": "#1d4ed8",
+            "secondary-container": "#4069f2",
+            "on-surface": "#0d1c2f",
+            "primary": "#001428",
+            "primary-container": "#0f2942",
+            "background": "#f8f9ff",
+            "surface": "#f8f9ff",
+            "surface-container-low": "#eff4ff",
+            "surface-container": "#e6eeff",
+            "surface-container-high": "#dde9ff",
+            "on-surface-variant": "#43474d",
+            "outline": "#74777e",
+            "outline-variant": "#c3c6ce",
+            "error": "#ba1a1a"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/clearbooks.css">
+  <script src="assets/clearbooks.js" defer></script>
+</head>
+<body class="bg-surface text-on-surface font-sans antialiased selection:bg-secondary/20">
+  <header class="w-full bg-white shadow-sm border-b border-[#c3c6ce]/30 sticky top-0 z-50">
+  <div class="flex justify-between items-center w-full px-6 max-w-7xl mx-auto h-20">
+    <!-- Brand Logo -->
+    <a class="flex items-center gap-2 focus:outline-none" href="index.html">
+      <div class="w-10 h-10 rounded-lg bg-[#0f2942] text-white flex items-center justify-center font-bold text-xl">
+        <span class="material-symbols-outlined text-[#b7c4ff]" aria-hidden="true">account_balance</span>
+      </div>
+      <div class="flex flex-col">
+        <span class="text-xl font-bold text-[#001428] tracking-tight leading-tight">ClearBooks Advisory</span>
+        <span class="text-[11px] font-semibold text-[#43474d] tracking-wider uppercase leading-tight">CPA &amp; Advisory</span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <nav class="hidden md:flex items-center gap-7" aria-label="Primary">
+      <a class="text-[#43474d] font-medium py-1 hover:text-[#1d4ed8] transition-colors duration-150 text-sm tracking-[0.01em]" href="index.html">Home</a>
+      <a class="text-[#43474d] font-medium py-1 hover:text-[#1d4ed8] transition-colors duration-150 text-sm tracking-[0.01em]" href="how-we-do-business.html">Why Us</a>
+      <a class="text-[#43474d] font-medium py-1 hover:text-[#1d4ed8] transition-colors duration-150 text-sm tracking-[0.01em]" href="contact.html">Contact Us</a>
+    </nav>
+
+    <!-- Right Action Cluster & Search -->
+    <div class="flex items-center gap-3">
+      <button type="button" data-open-search aria-label="Search ClearBooks" class="p-2 rounded-lg text-[#43474d] hover:text-[#1d4ed8] hover:bg-[#eff4ff] transition-colors duration-150">
+        <span class="material-symbols-outlined text-[22px]" aria-hidden="true">search</span>
+      </button>
+      <a class="hidden sm:inline-flex items-center justify-center bg-[#1d4ed8] hover:bg-[#0039b5] text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 active:scale-[0.98] shadow-sm" href="contact.html">
+        Book Consultation
+      </a>
+      <button type="button" class="md:hidden inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-[#c3c6ce] text-[#001428] text-sm font-semibold hover:bg-[#eff4ff]" popovertarget="mobile-nav-menu" popovertargetaction="toggle" aria-controls="mobile-nav-menu">
+        <span class="material-symbols-outlined text-[20px]" aria-hidden="true">menu</span>
+        <span>Menu</span>
+      </button>
+    </div>
+  </div>
+
+  <ul id="mobile-nav-menu" popover="auto" class="space-y-1 text-sm font-medium text-[#0d1c2f]">
+    <li><a href="index.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Home</a></li>
+    <li></li>
+    <li><a href="how-we-do-business.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Why Us</a></li>
+    <li><a href="bir-compliance-guide.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">BIR Compliance Guide</a></li>
+    <li><a href="corporate-compliance.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Corporate &amp; SME Compliance</a></li>
+    <li><a href="contact.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Contact Us</a></li>
+    <li class="pt-2 border-t border-[#c3c6ce]/40"><a href="contact.html" class="block text-center px-3 py-2.5 rounded-lg bg-[#1d4ed8] text-white font-semibold">Book Consultation</a></li>
+  </ul>
+</header>
+
+  <main>
+    <section class="bg-primary text-white py-14 sm:py-20 border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-blue-200 text-xs font-semibold mb-4">
+          <span class="material-symbols-outlined text-[16px]" aria-hidden="true">computer</span>
+          <span>Electronic Filing & Payment System</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight max-w-3xl leading-tight">BIR eFPS, eBIRForms & eAFS Step-by-Step Workflow</h1>
+        <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">How ClearBooks Advisory automates your monthly and quarterly electronic tax filings, Authorized Agent Bank (AAB) settlements, and eAFS digital archiving.</p>
+      </div>
+    </section>
+
+    <section class="py-12 sm:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div id="eafs" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          <div class="bg-white rounded-xl border border-outline-variant/60 p-6">
+            <div class="text-xs font-bold text-secondary uppercase tracking-wider mb-1">Step 01 • Enrollment</div>
+            <h2 class="text-lg font-bold text-primary mb-2">eFPS &amp; Authorized Agent Bank (AAB) Linking</h2>
+            <p class="text-sm text-on-surface-variant leading-relaxed">We verify your RDO classification (Large Taxpayers, TAMP, or voluntary eFPS) and coordinate AAB online banking enrollment so tax payments clear without queue delays.</p>
+          </div>
+          <div class="bg-white rounded-xl border border-outline-variant/60 p-6">
+            <div class="text-xs font-bold text-secondary uppercase tracking-wider mb-1">Step 02 • Preparation</div>
+            <h2 class="text-lg font-bold text-primary mb-2">Pre-Filing CPA Reconciliation</h2>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Every Form 1601-C, 0619-E, 2550Q, and 1702Q is reconciled against your general ledger, SLSP, and Form 2307 credits 5 days before the statutory deadline.</p>
+          </div>
+          <div class="bg-white rounded-xl border border-outline-variant/60 p-6">
+            <div class="text-xs font-bold text-secondary uppercase tracking-wider mb-1">Step 03 • Filing &amp; Payment</div>
+            <h2 class="text-lg font-bold text-primary mb-2">Filing Reference Number (FRN) Confirmation</h2>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Upon eFPS submission and payment confirmation, we archive the FRN, bank confirmation receipt, and tax return PDF in your encrypted ClearBooks vault.</p>
+          </div>
+          <div class="bg-white rounded-xl border border-outline-variant/60 p-6">
+            <div class="text-xs font-bold text-secondary uppercase tracking-wider mb-1">Step 04 • eAFS</div>
+            <h2 class="text-lg font-bold text-primary mb-2">Electronic Audited Financial Statements (eAFS)</h2>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Annual ITR attachments, AFS, and SAWT/Form 2307 scans are packaged per BIR eAFS naming conventions and uploaded with Transaction Reference Numbers.</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href="bir-compliance-guide.html" class="px-5 py-3 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary-container">View Full BIR Compliance Guide</a>
+          <a href="contact.html" class="px-5 py-3 rounded-lg bg-secondary text-white text-sm font-semibold hover:bg-secondary-container">Request eFPS Setup Help</a>
+        </div>
+        
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-primary text-slate-300 border-t border-white/10 py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+        <div class="space-y-3">
+          <div class="flex items-center gap-2 text-white font-bold text-lg">
+            <span class="material-symbols-outlined" aria-hidden="true">account_balance</span>
+            <span>ClearBooks Advisory</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">Meticulous Philippine bookkeeping, BIR tax compliance, and SEC corporate advisory led by PRC-accredited CPAs.</p>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold text-sm mb-3">Practice Areas</h3>
+          <ul class="space-y-2 text-xs">
+            <li><a href="index.html#freelancers" class="hover:text-white">Freelancer Packages</a></li>
+            <li><a href="index.html#smbs" class="hover:text-white">Small Business Essentials</a></li>
+            <li><a href="corporate-compliance.html" class="hover:text-white">Corporate Bookkeeping</a></li>
+            <li><a href="how-we-do-business.html" class="hover:text-white">How We Do Business</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold text-sm mb-3">Compliance Resources</h3>
+          <ul class="space-y-2 text-xs">
+            <li><a href="bir-compliance-guide.html" class="hover:text-white">BIR Compliance Guide</a></li>
+            <li><a href="sec-disclosures.html" class="hover:text-white">SEC Statutory Disclosures</a></li>
+            <li><a href="efps-portal-guide.html" class="hover:text-white">eFPS Step-by-Step Portal</a></li>
+            <li><a href="cpa-credentials.html" class="hover:text-white">CPA Accreditation Credentials</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold text-sm mb-3">Legal &amp; Support</h3>
+          <ul class="space-y-2 text-xs">
+            <li><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html" class="hover:text-white">Terms of Service</a></li>
+            <li><a href="security.html" class="hover:text-white">Security</a></li>
+            <li><a href="contact.html" class="hover:text-white">Contact Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <p>© 2025 ClearBooks Advisory • PRC / BIR / SEC Accredited Practice</p>
+        <p>RA 10173 Data Privacy Act Compliant</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
