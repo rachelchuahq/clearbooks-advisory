@@ -165,14 +165,8 @@
 <header class="w-full bg-white shadow-sm border-b border-[#c3c6ce]/30 sticky top-0 z-50">
   <div class="flex justify-between items-center w-full px-6 max-w-7xl mx-auto h-20">
     <!-- Brand Logo -->
-    <a class="flex items-center gap-2 focus:outline-none" href="index.html">
-      <div class="w-10 h-10 rounded-lg bg-[#0f2942] text-white flex items-center justify-center font-bold text-xl">
-        <span class="material-symbols-outlined text-[#b7c4ff]" aria-hidden="true">account_balance</span>
-      </div>
-      <div class="flex flex-col">
-        <span class="text-xl font-bold text-[#001428] tracking-tight leading-tight">ClearBooks Advisory</span>
-        <span class="text-[11px] font-semibold text-[#43474d] tracking-wider uppercase leading-tight">CPA &amp; Advisory</span>
-      </div>
+    <a class="flex items-center focus:outline-none" href="index.html">
+      <img src="assets/logo.png" alt="ClearBooks Advisory" class="h-7 sm:h-8 w-auto">
     </a>
 
     <!-- Desktop Nav Links -->
@@ -853,7 +847,7 @@
 <!-- Top Brand Row in Footer -->
 <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-space-md pb-space-md border-b border-outline/20">
 <div>
-<span class="font-headline-md text-headline-md font-bold text-on-primary">ClearBooks Advisory</span>
+<a href="index.html" class="inline-block"><img src="assets/logo.png" alt="ClearBooks Advisory" class="h-7 w-auto brightness-0 invert"></a>
 <p class="font-body-sm text-body-sm text-on-primary-container max-w-lg mt-1">
             Institutional Philippine bookkeeping, BIR tax defense, statutory corporate compliance, and outsourced CPA controllership.
           </p>
@@ -869,8 +863,7 @@
 </div>
 <!-- Statutory Copyright String (Exact match from JSON) -->
 <div class="text-on-primary-container font-body-sm text-body-sm pt-space-sm">
-        © 2025 ClearBooks Advisory All rights reserved. Registered BIR Tax Agent &amp; SEC Certified Public Accountants (Philippines).
-      </div>
+        © 2026 ClearBooks Advisory All rights reserved.</div>
 </div>
 </footer>
 <!-- Interactive Logic for Methodology Accordion, FAQ, and Form -->
@@ -1062,7 +1055,22 @@
   </div>
 </dialog>
 <script>
-function cbShowDiscoveryModal(form) {
+async function cbShowDiscoveryModal(form) {
+  const inputs = Array.from(form.querySelectorAll("input, select"));
+  const fullName = inputs[0]?.value || "";
+  const contact = [inputs[1]?.value, inputs[2]?.value].filter(Boolean).join(" / ");
+  const businessStructure = inputs[3]?.value || "";
+  const notes = [inputs[4]?.value, inputs[5]?.value].filter(Boolean).join(" | ");
+  if (window.cbSubmitConsultationToSheet) {
+    await window.cbSubmitConsultationToSheet({
+      formType: "30-Min Discovery Session",
+      fullName,
+      contact,
+      businessStructure,
+      notes,
+      sourcePage: "how-we-do-business.html"
+    });
+  }
   document.getElementById("how-discovery-dialog").showModal();
   form.reset();
 }

@@ -144,14 +144,8 @@
 <header class="w-full bg-white shadow-sm border-b border-[#c3c6ce]/30 sticky top-0 z-50">
   <div class="flex justify-between items-center w-full px-6 max-w-7xl mx-auto h-20">
     <!-- Brand Logo -->
-    <a class="flex items-center gap-2 focus:outline-none" href="index.html">
-      <div class="w-10 h-10 rounded-lg bg-[#0f2942] text-white flex items-center justify-center font-bold text-xl">
-        <span class="material-symbols-outlined text-[#b7c4ff]" aria-hidden="true">account_balance</span>
-      </div>
-      <div class="flex flex-col">
-        <span class="text-xl font-bold text-[#001428] tracking-tight leading-tight">ClearBooks Advisory</span>
-        <span class="text-[11px] font-semibold text-[#43474d] tracking-wider uppercase leading-tight">CPA &amp; Advisory</span>
-      </div>
+    <a class="flex items-center focus:outline-none" href="index.html">
+      <img src="assets/logo.png" alt="ClearBooks Advisory" class="h-7 sm:h-8 w-auto">
     </a>
 
     <!-- Desktop Nav Links -->
@@ -596,12 +590,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-8 border-b border-primary-container">
 <!-- Brand Info Column -->
 <div class="lg:col-span-2 flex flex-col gap-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-secondary text-on-secondary flex items-center justify-center">
-<span class="material-symbols-outlined text-[24px]">account_balance</span>
-</div>
-<span class="font-headline-md text-headline-md font-bold text-on-primary tracking-tight">ClearBooks Advisory</span>
-</div>
+<a href="index.html" class="inline-block"><img src="assets/logo.png" alt="ClearBooks Advisory" class="h-7 w-auto brightness-0 invert"></a>
 <p class="font-body-sm text-secondary-fixed max-w-sm">
             Accredited Philippine CPAs and certified tax compliance agents delivering transparent, stress-free accounting for solo professionals, growing SMEs, and enterprise entities.
           </p>
@@ -654,8 +643,7 @@
 <!-- Bottom Bar: Accreditation Details and Copyright Text from JSON -->
 <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-on-primary-container font-body-sm">
 <p class="text-center md:text-left text-[13px]">
-          © 2025 ClearBooks Advisory All rights reserved. Registered BIR Tax Agent &amp; SEC Certified Public Accountants (Philippines).
-        </p>
+          © 2026 ClearBooks Advisory All rights reserved.</p>
 <div class="flex items-center gap-6 font-label-sm">
 <a class="hover:text-secondary-fixed transition-colors duration-150" href="privacy-policy.html">Privacy Policy</a>
 <a class="hover:text-secondary-fixed transition-colors duration-150" href="terms-of-service.html">Terms of Service</a>
@@ -689,10 +677,20 @@
   </div>
 </dialog>
 <script>
-function handleHomeConsultSubmit(form) {
+async function handleHomeConsultSubmit(form) {
   const name = (form.querySelector("#fullName") || form.querySelector("#modalFullName"))?.value || "Client";
   const contact = (form.querySelector("#contactInfo") || form.querySelector("#modalContactInfo"))?.value || "your email";
   const structure = (form.querySelector("#businessStructure") || form.querySelector("#modalBusinessStructure"))?.value || "your entity";
+  if (window.cbSubmitConsultationToSheet) {
+    await window.cbSubmitConsultationToSheet({
+      formType: form.id === "modal-consult-form" ? "Schedule a Call Modal" : "Homepage 15-Min Review",
+      fullName: name,
+      contact: contact,
+      businessStructure: structure,
+      notes: "",
+      sourcePage: "index.html"
+    });
+  }
   const summary = document.getElementById("home-consult-summary");
   summary.textContent = `Thank you, ${name}. A PRC-accredited ClearBooks CPA will reach out via ${contact} within 2 business hours to review your ${structure} compliance setup.`;
   document.getElementById("home-consult-dialog").showModal();

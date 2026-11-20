@@ -268,6 +268,154 @@
     });
   }
 
+  // 6b. Lead Generation Email Capture Modal for Compliance Guide
+  // Paste your deployed Google Apps Script Web App URL below to log leads into your Google Sheet:
+  const CB_SHEETS_WEBHOOK_URL = window.CB_SHEETS_WEBHOOK_URL || 'https://script.google.com/macros/s/AKfycbyV98pZ4Ym1RXaafNjiKPIObbtb9Yj_pdpclUljJikHCxPw9AJP6mi9o-zn0DPGK6aLLA/exec';
+
+  window.cbSubmitLeadToSheet = async function ({ firstName, lastName, email, sourcePage }) {
+    const payload = {
+      sheetTab: 'Email Capture',
+      timestamp: new Date().toISOString(),
+      firstName: (firstName || '').trim(),
+      lastName: (lastName || '').trim(),
+      email: (email || '').trim(),
+      sourcePage: sourcePage || window.location.pathname.split('/').pop() || 'index.html'
+    };
+    if (!CB_SHEETS_WEBHOOK_URL) {
+      console.info('ClearBooks Lead Captured (configure CB_SHEETS_WEBHOOK_URL to sync to Google Sheets):', payload);
+      return;
+    }
+    try {
+      await fetch(CB_SHEETS_WEBHOOK_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      });
+    } catch (err) {
+      console.warn('Could not send lead to Google Sheet:', err);
+    }
+  };
+
+  window.cbSubmitConsultationToSheet = async function ({ formType, fullName, contact, businessStructure, notes, sourcePage }) {
+    const payload = {
+      sheetTab: 'Consultations',
+      timestamp: new Date().toISOString(),
+      formType: (formType || 'Consultation').trim(),
+      fullName: (fullName || '').trim(),
+      contact: (contact || '').trim(),
+      businessStructure: (businessStructure || '').trim(),
+      notes: (notes || '').trim(),
+      sourcePage: sourcePage || window.location.pathname.split('/').pop() || 'index.html'
+    };
+    if (!CB_SHEETS_WEBHOOK_URL) return;
+    try {
+      await fetch(CB_SHEETS_WEBHOOK_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      });
+    } catch (err) {
+      console.warn('Could not send consultation to Google Sheet:', err);
+    }
+  };
+
+  function ensureLeadGuideDialog() {
+    let dialog = document.getElementById('cb-lead-guide-dialog');
+    if (dialog) return dialog;
+    dialog = document.createElement('dialog');
+    dialog.id = 'cb-lead-guide-dialog';
+    dialog.setAttribute('closedby', 'any');
+    dialog.setAttribute('aria-labelledby', 'cb-lead-guide-title');
+    dialog.className = 'w-full max-w-2xl rounded-2xl border border-outline-variant bg-white p-0 shadow-2xl text-on-surface';
+    dialog.innerHTML = `
+      <div class="relative p-6 sm:p-8">
+        <button type="button" id="cb-lead-guide-close" aria-label="Close modal" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant flex items-center justify-center transition-colors">
+          <span class="material-symbols-outlined text-[20px]" aria-hidden="true">close</span>
+        </button>
+        <div id="cb-lead-form-view">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold">
+              <span class="material-symbols-outlined text-[14px] text-secondary" aria-hidden="true">calendar_month</span>
+              Official Resource
+            </span>
+            <span class="text-xs font-mono font-semibold text-secondary">Updated for FY2026</span>
+          </div>
+          <h2 id="cb-lead-guide-title" class="text-2xl font-bold text-primary tracking-tight mb-2">Get the Philippine BIR &amp; Statutory Tax Calendar Guide</h2>
+          <p class="text-sm text-on-surface-variant mb-6">Enter your name and email address and our accredited CPAs will send the complete compliance roadmap, statutory deadlines, and surcharge matrix straight to your inbox.</p>
+          <form id="cb-lead-guide-form" class="space-y-4" data-cb-validate>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="cb-lead-first-name" class="block text-sm font-semibold text-primary mb-1.5">First Name <span class="text-error">*</span></label>
+                <input id="cb-lead-first-name" name="firstName" type="text" required autofocus autocomplete="given-name" placeholder="Maria" class="w-full h-11 px-3.5 rounded-lg border border-outline-variant bg-surface text-sm focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none">
+              </div>
+              <div>
+                <label for="cb-lead-last-name" class="block text-sm font-semibold text-primary mb-1.5">Last Name <span class="text-error">*</span></label>
+                <input id="cb-lead-last-name" name="lastName" type="text" required autocomplete="family-name" placeholder="Santos" class="w-full h-11 px-3.5 rounded-lg border border-outline-variant bg-surface text-sm focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none">
+              </div>
+            </div>
+            <div>
+              <label for="cb-lead-email" class="block text-sm font-semibold text-primary mb-1.5">Email Address <span class="text-error">*</span></label>
+              <input id="cb-lead-email" name="email" type="email" required autocomplete="email" placeholder="maria@company.ph" class="w-full h-11 px-3.5 rounded-lg border border-outline-variant bg-surface text-sm focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none">
+            </div>
+            <button type="submit" class="w-full bg-secondary text-white font-bold text-sm py-3.5 rounded-lg shadow-sm hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-[20px]" aria-hidden="true">mail</span>
+              <span>Send Me the Compliance Guide</span>
+            </button>
+            <p class="text-xs text-center text-on-surface-variant flex items-center justify-center gap-1.5">
+              <span class="material-symbols-outlined text-[16px] text-emerald-600" aria-hidden="true">verified_user</span>
+              <span>Free resource prepared by ClearBooks Advisory accredited CPAs. 100% spam-free.</span>
+            </p>
+          </form>
+        </div>
+        <div id="cb-lead-success-view" class="hidden text-center py-6 space-y-4">
+          <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto">
+            <span class="material-symbols-outlined text-[28px]" aria-hidden="true">mark_email_read</span>
+          </div>
+          <h3 class="text-xl font-bold text-primary">Check Your Inbox!</h3>
+          <p class="text-sm text-on-surface-variant max-w-md mx-auto">Thank you, <strong id="cb-lead-sent-name" class="text-primary"></strong>! We've sent the Philippine BIR &amp; Statutory Tax Calendar Guide to <strong id="cb-lead-sent-email" class="text-primary font-mono"></strong>.</p>
+          <button type="button" id="cb-lead-done-btn" class="px-6 py-2.5 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary-container">Done</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(dialog);
+
+    const formView = dialog.querySelector('#cb-lead-form-view');
+    const successView = dialog.querySelector('#cb-lead-success-view');
+    const form = dialog.querySelector('#cb-lead-guide-form');
+    const firstInput = dialog.querySelector('#cb-lead-first-name');
+    const lastInput = dialog.querySelector('#cb-lead-last-name');
+    const emailInput = dialog.querySelector('#cb-lead-email');
+    const sentName = dialog.querySelector('#cb-lead-sent-name');
+    const sentEmail = dialog.querySelector('#cb-lead-sent-email');
+
+    dialog.querySelector('#cb-lead-guide-close').addEventListener('click', () => dialog.close());
+    dialog.querySelector('#cb-lead-done-btn').addEventListener('click', () => dialog.close());
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const firstName = firstInput.value.trim();
+      const lastName = lastInput.value.trim();
+      const email = emailInput.value.trim();
+      await window.cbSubmitLeadToSheet({ firstName, lastName, email });
+      sentName.textContent = `${firstName} ${lastName}`.trim();
+      sentEmail.textContent = email;
+      formView.classList.add('hidden');
+      successView.classList.remove('hidden');
+      form.reset();
+    });
+    return dialog;
+  }
+
+  window.cbOpenLeadGuideModal = function () {
+    const d = ensureLeadGuideDialog();
+    d.querySelector('#cb-lead-form-view').classList.remove('hidden');
+    d.querySelector('#cb-lead-success-view').classList.add('hidden');
+    d.showModal();
+    d.querySelector('#cb-lead-first-name')?.focus();
+  };
+
   // 7. Highlight current page in nav
   function markCurrentPage() {
     const path = window.location.pathname.split('/').pop() || 'index.html';
