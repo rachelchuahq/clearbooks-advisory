@@ -172,7 +172,7 @@
     <!-- Desktop Nav Links -->
     <nav class="hidden md:flex items-center gap-7" aria-label="Primary">
       <a class="text-[#43474d] font-medium py-1 hover:text-[#1d4ed8] transition-colors duration-150 text-sm tracking-[0.01em]" href="index.html">Home</a>
-      <a class="bg-emerald-100 text-emerald-800 border border-emerald-300 px-3 py-1.5 rounded-lg font-bold transition-all duration-200 text-sm tracking-[0.01em]" href="how-we-do-business.html" aria-current="page">Why Us</a>
+      <a class="bg-emerald-100 text-emerald-800 border border-emerald-300 px-3 py-1.5 rounded-lg font-bold transition-all duration-200 text-sm tracking-[0.01em]" href="how-we-do-business.html" aria-current="page">Our Process</a>
       <a class="text-[#43474d] font-medium py-1 hover:text-[#1d4ed8] transition-colors duration-150 text-sm tracking-[0.01em]" href="contact.html">Contact Us</a>
     </nav>
 
@@ -181,9 +181,9 @@
       <button type="button" data-open-search aria-label="Search ClearBooks" class="p-2 rounded-lg text-[#43474d] hover:text-[#1d4ed8] hover:bg-[#eff4ff] transition-colors duration-150">
         <span class="material-symbols-outlined text-[22px]" aria-hidden="true">search</span>
       </button>
-      <a class="hidden sm:inline-flex items-center justify-center bg-[#1d4ed8] hover:bg-[#0039b5] text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 active:scale-[0.98] shadow-sm" href="#booking">
+      <button type="button" onclick="cbOpenScheduleCallModal()" class="hidden sm:inline-flex items-center justify-center bg-[#1d4ed8] hover:bg-[#0039b5] text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 active:scale-[0.98] shadow-sm">
         Book Consultation
-      </a>
+      </button>
       <button type="button" class="md:hidden inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-[#c3c6ce] text-[#001428] text-sm font-semibold hover:bg-[#eff4ff]" popovertarget="mobile-nav-menu" popovertargetaction="toggle" aria-controls="mobile-nav-menu">
         <span class="material-symbols-outlined text-[20px]" aria-hidden="true">menu</span>
         <span>Menu</span>
@@ -194,43 +194,19 @@
   <ul id="mobile-nav-menu" popover="auto" class="space-y-1 text-sm font-medium text-[#0d1c2f]">
     <li><a href="index.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Home</a></li>
     <li></li>
-    <li><a href="how-we-do-business.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Why Us</a></li>
+    <li><a href="how-we-do-business.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Our Process</a></li>
     <li><a href="bir-compliance-guide.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">BIR Compliance Guide</a></li>
     <li><a href="corporate-compliance.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Corporate &amp; SME Compliance</a></li>
     <li><a href="contact.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Contact Us</a></li>
-    <li class="pt-2 border-t border-[#c3c6ce]/40"><a href="#booking" class="block text-center px-3 py-2.5 rounded-lg bg-[#1d4ed8] text-white font-semibold">Book Consultation</a></li>
+    <li class="pt-2 border-t border-[#c3c6ce]/40"><button type="button" onclick="document.getElementById(\'mobile-nav-menu\')?.hidePopover?.(); cbOpenScheduleCallModal();" class="w-full block text-center px-3 py-2.5 rounded-lg bg-[#1d4ed8] text-white font-semibold">Book Consultation</button></li>
   </ul>
 </header>
-<!-- ================= SECTION 1: BREADCRUMB & OFFICIAL SOP BANNER ================= -->
-<div class="w-full bg-surface-container-low border-b border-outline-variant/30 py-space-sm">
-<div class="max-w-7xl mx-auto px-gutter flex flex-wrap items-center justify-between gap-space-sm">
-<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
-<span>Methodology</span>
-<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
-<span class="text-secondary font-semibold">Standard Operating Procedure (SOP)</span>
-</div>
-<div class="flex items-center gap-space-sm">
-<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-highest text-primary-container font-semibold border border-outline-variant/40">
-<span class="w-2 h-2 rounded-full bg-secondary"></span>
-          ClearBooks Advisory Standard Operating Procedure (SOP) • 14-Day Seamless Onboarding Guarantee
-        </span>
-<span class="hidden lg:inline-flex items-center gap-1 text-label-sm font-label-sm text-on-surface-variant">
-<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="verified_user">verified_user</span>
-          PRC-BOA Accredited CPA Firm
-        </span>
-</div>
-</div>
-</div>
 <!-- ================= SECTION 2: HERO SECTION ================= -->
 <section class="relative pt-16 pb-20 sm:pt-24 sm:pb-28 overflow-hidden bg-surface">
 <!-- Subtle architectural background accent -->
 <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image: radial-gradient(#001428 1px, transparent 1px); background-size: 24px 24px;"></div>
 <div class="max-w-7xl mx-auto px-gutter relative z-10">
 <div class="max-w-4xl">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed/50 border border-secondary/20 text-on-secondary-fixed font-label-sm text-label-sm mb-space-md">
-<span class="material-symbols-outlined text-[16px]" data-icon="rule">rule</span>
-          Philippine Tax Code (NIRC) &amp; PFRS Auditing Standards
-        </div>
 <h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-primary tracking-tight font-extrabold mb-space-md">
           How We Do Business: Transparent, Rigorous, and Built for Zero Statutory Risk
         </h1>
@@ -242,10 +218,6 @@
 <a class="inline-flex items-center gap-2 bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary px-space-lg py-3 rounded-lg font-label-md text-label-md transition-all duration-200 active:scale-[0.98] shadow-sm" href="#booking">
 <span>Schedule Free Discovery Call</span>
 <span class="material-symbols-outlined text-[18px]" data-icon="calendar_month">calendar_month</span>
-</a>
-<a class="inline-flex items-center gap-2 bg-surface-container-lowest hover:bg-surface-container-low text-primary-container border border-outline-variant px-space-lg py-3 rounded-lg font-label-md text-label-md transition-all duration-200 active:scale-[0.98]" href="#sla-protocol" onclick="event.preventDefault(); cbDownloadSlaProtocol();">
-<span class="material-symbols-outlined text-[18px] text-secondary" data-icon="download_for_offline">download_for_offline</span>
-<span>Download Onboarding SLA Protocol (PDF)</span>
 </a>
 </div>
 </div>
@@ -291,277 +263,87 @@
 </div>
 </section>
 <!-- ================= SECTION 3: 4 DETAILED ONBOARDING STEPS (CORE FEATURE WITH INTERACTIVE EXPANSION) ================= -->
-<section class="py-20 sm:py-28 bg-surface-container-low/60 border-y border-outline-variant/30" id="methodology-section">
+<!-- Section 5: Onboarding & Migration Methodology (4-Step Horizontal Timeline) -->
+<section class="py-20 sm:py-28 bg-surface-container-lowest border-y border-outline-variant/30" id="methodology-section">
 <div class="max-w-7xl mx-auto px-gutter">
-<!-- Section Header -->
-<div class="max-w-4xl mx-auto mb-12 text-left">
-  <div class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider mb-3">Sequential Architecture</div>
-  <h2 class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight mb-4">
-    The 14-Day Structured Methodology
-  </h2>
-  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-2xl">
-    We eliminate the friction of switching accountants. Select any stage below to inspect the deliverables, SLA guarantees, and team allocations.
-  </p>
+<div class="text-center max-w-3xl mx-auto mb-16">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Standard Operating Procedure</span>
+<h2 class="font-headline-xl text-headline-xl font-bold text-primary mt-1 mb-4">
+            Seamless Onboarding &amp; Migration Methodology
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Transitioning your books to ClearBooks Advisory is engineered to be swift, zero-disruption, and complete within 14 business days.
+          </p>
 </div>
-<!-- Linear 4-Step Accordion (More Space on the Sides) -->
-<div class="max-w-4xl mx-auto space-y-6" id="step-cards-container">
-<!-- STEP 01 CARD (Expanded by Default) -->
-<div aria-labelledby="step-title-1" class="step-card active-step ring-2 ring-primary/20 bg-surface-container-lowest rounded-xl border border-secondary p-space-lg flex flex-col justify-between custom-shadow-card focus-within:ring-2 focus-within:ring-secondary/30" id="step-card-1" role="region" tabindex="0">
-<div>
-<!-- Clickable Header Area -->
-<div aria-controls="step-accordion-1" aria-expanded="true" class="flex items-center justify-between border-b border-outline-variant/30 pb-space-md mb-space-md cursor-pointer select-none group" id="step-header-1" onclick="toggleStepAccordion(1)" onkeydown="handleStepKey(event, 1)" role="button" tabindex="0">
-<div class="flex items-center gap-space-sm">
-<span class="step-badge w-9 h-9 rounded-lg bg-primary-container text-surface-container-lowest font-headline-md text-headline-md font-bold flex items-center justify-center transition-transform group-hover:scale-105">01</span>
-<div>
-<span class="font-label-sm text-label-sm text-secondary font-bold tracking-wider uppercase">DAY 1</span>
-<h3 class="font-headline-md text-headline-md text-primary font-bold group-hover:text-secondary transition-colors" id="step-title-1">Schedule a Discovery Call</h3>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+<!-- Step 1 -->
+<div class="bg-surface-bright p-6 rounded-xl border border-outline-variant/50 relative flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<span class="w-10 h-10 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center font-mono text-label-md">01</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Days 1–3</span>
 </div>
-</div>
-<div class="flex items-center gap-2">
-<span class="hidden sm:inline-flex px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-high text-on-surface font-medium">
-                30 Mins Virtual
-              </span>
-<span class="p-1 rounded-full bg-surface-container-low text-secondary group-hover:bg-secondary-fixed/50 transition-all duration-200">
-<span class="material-symbols-outlined text-[20px] transition-transform duration-300 transform rotate-180" data-icon="expand_more" id="step-icon-1">expand_more</span>
-</span>
-</div>
-</div>
-<!-- High Level Summary (Always Visible) -->
-<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
-              A private, highly focused 30-minute consultation with an accredited Philippine CPA. We examine your entity classification (Sole Proprietorship, OPC, Domestic Corporation), monthly transaction volume, VAT registration (12% regular vs. Non-VAT 1% / 3%), and existing bookkeeping ecosystem.
+<h3 class="font-headline-md text-headline-md font-bold text-primary mb-2">Historical Books Diagnostic</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4 flex-grow">
+              We audit prior-year 1702RT filings, open stop-filer alerts with your RDO, and un-reconciled 2307 certificates to map lingering corporate liability.
             </p>
-<!-- Animated Accordion Deep-Dive Content -->
-<div aria-hidden="false" class="step-accordion-grid expanded" id="step-accordion-1">
-<div class="step-accordion-inner">
-<!-- Grid breakdown inside Step 1 -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm bg-surface-container-low/50 p-space-md rounded-lg border border-outline-variant/30 mb-space-md">
-<div>
-<span class="font-label-sm text-label-sm font-bold text-primary flex items-center gap-1 mb-1">
-<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="task_alt">task_alt</span> Deliverables
-                </span>
-<ul class="text-body-sm font-body-sm text-on-surface-variant space-y-1">
-<li>• Mutual Non-Disclosure Agreement</li>
-<li>• Initial scope &amp; entity roadmap</li>
-<li>• Read-only compliance checklist</li>
-</ul>
+<div class="text-xs text-slate-500 font-semibold pt-3 border-t border-outline-variant/30">
+              Deliverable: Fiscal Risk Audit Report
+            </div>
 </div>
-<div>
-<span class="font-label-sm text-label-sm font-bold text-primary flex items-center gap-1 mb-1">
-<span class="material-symbols-outlined text-[16px] text-outline" data-icon="info">info</span> What We Need
-                </span>
-<p class="text-body-sm font-body-sm text-on-surface-variant">
-                  High-level company overview. Absolutely no bank account logins or private general ledgers are needed at this stage.
-                </p>
+<!-- Step 2 -->
+<div class="bg-surface-bright p-6 rounded-xl border border-outline-variant/50 relative flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<span class="w-10 h-10 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center font-mono text-label-md">02</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Days 4–7</span>
 </div>
-</div>
-</div>
-</div>
-</div>
-<!-- Footer Indicator Row -->
-<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant pt-space-xs border-t border-outline-variant/20">
-<span class="flex items-center gap-1">
-<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="shield">shield</span>
-              PRC Board of Accountancy Ethics Compliant
-            </span>
-<span class="text-primary font-semibold flex items-center gap-1">
-<span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>
-              Zero Commitment
-            </span>
-</div>
-</div>
-<!-- STEP 02 CARD (Collapsed by Default) -->
-<div aria-labelledby="step-title-2" class="step-card bg-surface-container-lowest rounded-xl border border-outline-variant/50 p-space-lg flex flex-col justify-between custom-shadow-card relative overflow-hidden hover:border-secondary/40 focus-within:ring-2 focus-within:ring-secondary/30" id="step-card-2" role="region" tabindex="0">
-<div class="absolute top-0 right-0 w-28 h-28 bg-secondary-fixed/30 rounded-bl-full pointer-events-none"></div>
-<div>
-<!-- Clickable Header Area -->
-<div aria-controls="step-accordion-2" aria-expanded="false" class="flex items-center justify-between border-b border-outline-variant/30 pb-space-md mb-space-md relative z-10 cursor-pointer select-none group" id="step-header-2" onclick="toggleStepAccordion(2)" onkeydown="handleStepKey(event, 2)" role="button" tabindex="0">
-<div class="flex items-center gap-space-sm">
-<span class="step-badge w-9 h-9 rounded-lg bg-secondary text-on-secondary font-headline-md text-headline-md font-bold flex items-center justify-center transition-transform group-hover:scale-105">02</span>
-<div>
-<span class="font-label-sm text-label-sm text-secondary font-bold tracking-wider uppercase">DAYS 2–3</span>
-<h3 class="font-headline-md text-headline-md text-primary font-bold group-hover:text-secondary transition-colors" id="step-title-2">48–72h Free Compliance Audit</h3>
-</div>
-</div>
-<div class="flex items-center gap-2">
-<span class="hidden sm:inline-flex px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-error-container text-on-error-container font-semibold">
-                100% Free • Zero Obligation
-              </span>
-<span class="p-1 rounded-full bg-surface-container-low text-secondary group-hover:bg-secondary-fixed/50 transition-all duration-200">
-<span class="material-symbols-outlined text-[20px] transition-transform duration-300 transform rotate-0" data-icon="expand_more" id="step-icon-2">expand_more</span>
-</span>
-</div>
-</div>
-<!-- High Level Summary (Always Visible) -->
-<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed relative z-10">
-              Our CPA team performs a forensic diagnostic across your prior 12–24 months of BIR filings (2550M/Q, 0619E, 1601C, 1702RT), 2307 withholding certificates, and SEC eFAST financial disclosures. We detect "stop-filer" notices and latent tax penalties before the BIR issues a Letter of Authority (LOA).
+<h3 class="font-headline-md text-headline-md font-bold text-primary mb-2">Chart of Accounts &amp; ERP Setup</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4 flex-grow">
+              Structuring your Chart of Accounts to mirror Philippine financial regulations and migrating existing balances into a certified cloud ERP (Xero/QBO).
             </p>
-<!-- Animated Accordion Deep-Dive Content -->
-<div aria-hidden="true" class="step-accordion-grid" id="step-accordion-2">
-<div class="step-accordion-inner">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm bg-surface-container-low/50 p-space-md rounded-lg border border-outline-variant/30 mb-space-md">
-<div>
-<span class="font-label-sm text-label-sm font-bold text-primary flex items-center gap-1 mb-1">
-<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="analytics">analytics</span> Deliverable Output
-                </span>
-<ul class="text-body-sm font-body-sm text-on-surface-variant space-y-1">
-<li>• Fiscal Health Scorecard (0–100)</li>
-<li>• Exposure Risk &amp; Penalties Matrix</li>
-<li>• Stop-Filer Resolution Strategy</li>
-</ul>
+<div class="text-xs text-slate-500 font-semibold pt-3 border-t border-outline-variant/30">
+              Deliverable: Reconciled Opening Ledger
+            </div>
 </div>
-<div>
-<span class="font-label-sm text-label-sm font-bold text-primary flex items-center gap-1 mb-1">
-<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="check_circle">check_circle</span> Statutory Scope
-                </span>
-<p class="text-body-sm font-body-sm text-on-surface-variant">
-                  Covers BIR eFPS/eREG validations, Alphalist submission integrity, and SEC General Information Sheet (GIS) filings.
-                </p>
+<!-- Step 3 -->
+<div class="bg-surface-bright p-6 rounded-xl border border-outline-variant/50 relative flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<span class="w-10 h-10 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center font-mono text-label-md">03</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Days 8–10</span>
 </div>
-</div>
-</div>
-</div>
-</div>
-<!-- Footer Indicator Row -->
-<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant pt-space-xs border-t border-outline-variant/20 relative z-10">
-<span class="text-primary font-bold flex items-center gap-1">
-<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="timer">timer</span>
-              Delivered within 72 business hours
-            </span>
-<span class="text-secondary font-bold">Standard Value: ₱35,000 (Waived)</span>
-</div>
-</div>
-<!-- STEP 03 CARD (Collapsed by Default) -->
-<div aria-labelledby="step-title-3" class="step-card bg-surface-container-lowest rounded-xl border border-outline-variant/50 p-space-lg flex flex-col justify-between custom-shadow-card hover:border-secondary/40 focus-within:ring-2 focus-within:ring-secondary/30" id="step-card-3" role="region" tabindex="0">
-<div>
-<!-- Clickable Header Area -->
-<div aria-controls="step-accordion-3" aria-expanded="false" class="flex items-center justify-between border-b border-outline-variant/30 pb-space-md mb-space-md cursor-pointer select-none group" id="step-header-3" onclick="toggleStepAccordion(3)" onkeydown="handleStepKey(event, 3)" role="button" tabindex="0">
-<div class="flex items-center gap-space-sm">
-<span class="step-badge w-9 h-9 rounded-lg bg-primary-container text-surface-container-lowest font-headline-md text-headline-md font-bold flex items-center justify-center transition-transform group-hover:scale-105">03</span>
-<div>
-<span class="font-label-sm text-label-sm text-secondary font-bold tracking-wider uppercase">DAYS 4–5</span>
-<h3 class="font-headline-md text-headline-md text-primary font-bold group-hover:text-secondary transition-colors" id="step-title-3">Diagnostic Delivery &amp; Proposal</h3>
-</div>
-</div>
-<div class="flex items-center gap-2">
-<span class="hidden sm:inline-flex px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-high text-on-surface font-medium">
-                Executive Review
-              </span>
-<span class="p-1 rounded-full bg-surface-container-low text-secondary group-hover:bg-secondary-fixed/50 transition-all duration-200">
-<span class="material-symbols-outlined text-[20px] transition-transform duration-300 transform rotate-0" data-icon="expand_more" id="step-icon-3">expand_more</span>
-</span>
-</div>
-</div>
-<!-- High Level Summary (Always Visible) -->
-<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
-              We present our findings directly to your executive or finance leadership. We uncover immediate allowable deductions, withholding tax optimizations, and propose a transparent, fixed-monthly engagement tailored directly to your volume.
+<h3 class="font-headline-md text-headline-md font-bold text-primary mb-2">Dedicated Senior CPA Lead</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4 flex-grow">
+              Direct introduction to your designated Controller. Shared Slack/Teams channel creation and establishing monthly document transfer protocols.
             </p>
-<!-- Animated Accordion Deep-Dive Content -->
-<div aria-hidden="true" class="step-accordion-grid" id="step-accordion-3">
-<div class="step-accordion-inner">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm bg-surface-container-low/50 p-space-md rounded-lg border border-outline-variant/30 mb-space-md">
-<div>
-<span class="font-label-sm text-label-sm font-bold text-primary flex items-center gap-1 mb-1">
-<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="description">description</span> Engagement Terms
-                </span>
-<ul class="text-body-sm font-body-sm text-on-surface-variant space-y-1">
-<li>• Fixed monthly retainer scope</li>
-<li>• No hidden cleanup surcharges</li>
-<li>• Strict under-4-hour SLA responses</li>
-</ul>
+<div class="text-xs text-slate-500 font-semibold pt-3 border-t border-outline-variant/30">
+              Deliverable: Corporate SLA Execution
+            </div>
 </div>
-<div>
-<span class="font-label-sm text-label-sm font-bold text-primary flex items-center gap-1 mb-1">
-<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="policy">policy</span> Risk Protection
-                </span>
-<p class="text-body-sm font-body-sm text-on-surface-variant">
-                  Full indemnification clauses for any late filing penalties originating from our accounting schedule.
-                </p>
+<!-- Step 4 -->
+<div class="bg-surface-bright p-6 rounded-xl border border-outline-variant/50 relative flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<span class="w-10 h-10 rounded-full bg-secondary text-on-secondary font-bold flex items-center justify-center font-mono text-label-md">04</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Ongoing</span>
 </div>
-</div>
-</div>
-</div>
-</div>
-<!-- Footer Indicator Row -->
-<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant pt-space-xs border-t border-outline-variant/20">
-<span class="text-on-surface-variant flex items-center gap-1">
-<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="handshake">handshake</span>
-              Mutually signed engagement letter
-            </span>
-<span class="text-primary font-semibold">No Long-Term Lock In</span>
-</div>
-</div>
-<!-- STEP 04 CARD (Collapsed by Default) -->
-<div aria-labelledby="step-title-4" class="step-card bg-surface-container-lowest rounded-xl border border-outline-variant/50 p-space-lg flex flex-col justify-between custom-shadow-card hover:border-secondary/40 focus-within:ring-2 focus-within:ring-secondary/30" id="step-card-4" role="region" tabindex="0">
-<div>
-<!-- Clickable Header Area -->
-<div aria-controls="step-accordion-4" aria-expanded="false" class="flex items-center justify-between border-b border-outline-variant/30 pb-space-md mb-space-md cursor-pointer select-none group" id="step-header-4" onclick="toggleStepAccordion(4)" onkeydown="handleStepKey(event, 4)" role="button" tabindex="0">
-<div class="flex items-center gap-space-sm">
-<span class="step-badge w-9 h-9 rounded-lg bg-primary-container text-surface-container-lowest font-headline-md text-headline-md font-bold flex items-center justify-center transition-transform group-hover:scale-105">04</span>
-<div>
-<span class="font-label-sm text-label-sm text-secondary font-bold tracking-wider uppercase">DAYS 6–14</span>
-<h3 class="font-headline-md text-headline-md text-primary font-bold group-hover:text-secondary transition-colors" id="step-title-4">Setup, Alignment &amp; Live Handoff</h3>
-</div>
-</div>
-<div class="flex items-center gap-2">
-<span class="hidden sm:inline-flex px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-secondary-fixed text-on-secondary-fixed font-semibold">
-                Go-Live Day 14
-              </span>
-<span class="p-1 rounded-full bg-surface-container-low text-secondary group-hover:bg-secondary-fixed/50 transition-all duration-200">
-<span class="material-symbols-outlined text-[20px] transition-transform duration-300 transform rotate-0" data-icon="expand_more" id="step-icon-4">expand_more</span>
-</span>
-</div>
-</div>
-<!-- High Level Summary (Always Visible) -->
-<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
-              Complete migration and institutional alignment. We re-structure your Chart of Accounts to Philippine Financial Reporting Standards (PFRS), sync bank feeds (BDO, BPI, UnionBank) in Xero/QBO, and establish encrypted BIR eFPS/eAFS digital keychains.
+<h3 class="font-headline-md text-headline-md font-bold text-primary mb-2">Cadence &amp; Strategic Reviews</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4 flex-grow">
+              Automated statutory recurring filings, quarterly tax prep, bi-monthly payroll, and executive management reviews to maximize legitimate deductions.
             </p>
-<!-- Animated Accordion Deep-Dive Content -->
-<div aria-hidden="true" class="step-accordion-grid" id="step-accordion-4">
-<div class="step-accordion-inner">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm bg-surface-container-low/50 p-space-md rounded-lg border border-outline-variant/30 mb-space-md">
-<div>
-<span class="font-label-sm text-label-sm font-bold text-primary flex items-center gap-1 mb-1">
-<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="hub">hub</span> Infrastructure
-                </span>
-<ul class="text-body-sm font-body-sm text-on-surface-variant space-y-1">
-<li>• Dedicated Slack or MS Teams room</li>
-<li>• Real-time cloud ledger dashboard</li>
-<li>• Monthly recurring tax calendar</li>
-</ul>
-</div>
-<div>
-<span class="font-label-sm text-label-sm font-bold text-primary flex items-center gap-1 mb-1">
-<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="groups">groups</span> Team Assignment
-                </span>
-<p class="text-body-sm font-body-sm text-on-surface-variant">
-                  One Senior CPA Lead, one dedicated Staff Bookkeeper, and a statutory tax compliance coordinator assigned.
-                </p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Footer Indicator Row -->
-<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant pt-space-xs border-t border-outline-variant/20">
-<span class="text-primary font-bold flex items-center gap-1">
-<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="verified">verified</span>
-              14-Day Delivery Complete
-            </span>
-<span class="text-secondary font-semibold">Zero Operational Disruption</span>
-</div>
+<div class="text-xs text-slate-500 font-semibold pt-3 border-t border-outline-variant/30">
+              Deliverable: Continuous Good Standing
+            </div>
 </div>
 </div>
 </div>
 </section>
 <!-- ================= SECTION 4: INTERACTIVE ENGAGEMENT TIMELINE & COMPARISON MATRIX ================= -->
-<section class="py-20 sm:py-28 bg-surface">
+<section class="py-20 sm:py-28 bg-primary text-on-primary border-y border-primary-container">
 <div class="max-w-7xl mx-auto px-gutter">
 <div class="text-center max-w-3xl mx-auto mb-space-xl">
-<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Methodology Benchmark</span>
-<h2 class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight mb-space-sm mt-1">
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase font-bold tracking-wider">Methodology Benchmark</span>
+<h2 class="font-headline-xl text-headline-xl text-on-primary font-bold tracking-tight mb-space-sm mt-1">
           The ClearBooks Method vs. Traditional Accounting Firms
         </h2>
-<p class="font-body-md text-body-md text-on-surface-variant">
+<p class="font-body-md text-body-md text-secondary-fixed/90">
           Why leading Philippine corporations, technology startups, and foreign subsidiaries transition from traditional retainers to our institutional CPA framework.
         </p>
 </div>
@@ -688,6 +470,16 @@
             </h3>
 </div>
 <div class="space-y-space-md" id="faq-container">
+<!-- FAQ 0 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 custom-shadow-card p-space-md transition-all">
+<button class="w-full flex items-center justify-between text-left font-headline-md text-[1.05rem] font-bold text-primary focus:outline-none" onclick="toggleFaq('faq-0')" type="button">
+<span>Who actually works on our books day-to-day?</span>
+<span class="material-symbols-outlined text-secondary transition-transform duration-200" data-icon="expand_more" id="icon-faq-0" style="transform: rotate(180deg);">expand_more</span>
+</button>
+<div class="mt-space-sm font-body-sm text-body-sm text-on-surface-variant leading-relaxed border-t border-outline-variant/20 pt-space-sm" id="faq-0">
+                Your account is assigned to a dedicated pod of trained accountants who handle daily bookkeeping, reconciliations, and filing preparation. Every month-end close, financial statement, and tax return undergoes a formal review and sign-off by our supervising licensed CPA.
+              </div>
+</div>
 <!-- FAQ 1 -->
 <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 custom-shadow-card p-space-md transition-all">
 <button class="w-full flex items-center justify-between text-left font-headline-md text-[1.05rem] font-bold text-primary focus:outline-none" onclick="toggleFaq('faq-1')" type="button">
@@ -759,69 +551,60 @@
             Step 1 starts right here. Pick a time with an accredited CPA Controller. We review your entity setup and begin your complimentary 48-72h compliance audit.
           </p>
 </div>
-<form class="grid grid-cols-1 sm:grid-cols-2 gap-space-md" data-cb-validate onsubmit="event.preventDefault(); cbShowDiscoveryModal(this);">
-<!-- Full Name -->
-<div>
-<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1" for="full_name">
-              Full Legal Name <span class="text-error">*</span>
-</label>
-<input class="w-full h-11 px-3 rounded-lg border border-outline-variant focus:border-secondary focus:ring-2 focus:ring-secondary/20 text-body-sm font-body-sm bg-surface-container-lowest" id="full_name" placeholder="e.g. Maria Clara Santos, CPA" required="" type="text"/>
-</div>
-<!-- Business Email -->
-<div>
-<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1" for="business_email">
-              Corporate / Business Email <span class="text-error">*</span>
-</label>
-<input class="w-full h-11 px-3 rounded-lg border border-outline-variant focus:border-secondary focus:ring-2 focus:ring-secondary/20 text-body-sm font-body-sm bg-surface-container-lowest" id="business_email" placeholder="maria@yourcompany.com.ph" required="" type="email"/>
-</div>
-<!-- Company Legal Name -->
-<div>
-<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1" for="company_name">
-              Registered Company Name <span class="text-error">*</span>
-</label>
-<input class="w-full h-11 px-3 rounded-lg border border-outline-variant focus:border-secondary focus:ring-2 focus:ring-secondary/20 text-body-sm font-body-sm bg-surface-container-lowest" id="company_name" placeholder="e.g. Apex Pacific Solutions Inc." required="" type="text"/>
-</div>
-<!-- Entity Structure Selector -->
-<div>
-<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1" for="entity_structure">
-              Entity Structure <span class="text-error">*</span>
-</label>
-<select class="w-full h-11 px-3 rounded-lg border border-outline-variant focus:border-secondary focus:ring-2 focus:ring-secondary/20 text-body-sm font-body-sm bg-surface-container-lowest text-on-surface" id="entity_structure" required="">
-<option disabled="" selected="" value="">Select Registration Classification</option>
-<option value="domestic_corp">Domestic Corporation (Regular)</option>
-<option value="opc">One Person Corporation (OPC)</option>
-<option value="sole_prop">Sole Proprietorship (DTI Registered)</option>
-<option value="branch_office">Foreign Branch Office / ROHQ</option>
-<option value="freelance_prof">Licensed Professional / Freelancer (BIR 8% or OSD)</option>
-</select>
-</div>
-<!-- Estimated Annual Turnover -->
-<div>
-<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1" for="turnover">
-              Estimated Annual Turnover (PHP) <span class="text-error">*</span>
-</label>
-<select class="w-full h-11 px-3 rounded-lg border border-outline-variant focus:border-secondary focus:ring-2 focus:ring-secondary/20 text-body-sm font-body-sm bg-surface-container-lowest text-on-surface" id="turnover" required="">
-<option disabled="" selected="" value="">Select Annual Revenue Bracket</option>
-<option value="tier1">Under ₱3,000,000 (Non-VAT Threshold)</option>
-<option value="tier2">₱3,000,000 – ₱15,000,000 (VAT Registered)</option>
-<option value="tier3">₱15,000,000 – ₱50,000,000 (Mid-Market)</option>
-<option value="tier4">₱50,000,000+ (Large Enterprise / Mandatory eFPS)</option>
-</select>
-</div>
-<!-- Preferred Schedule -->
-<div>
-<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1" for="pref_date">
-              Preferred Date &amp; Window <span class="text-error">*</span>
-</label>
-<input class="w-full h-11 px-3 rounded-lg border border-outline-variant focus:border-secondary focus:ring-2 focus:ring-secondary/20 text-body-sm font-body-sm bg-surface-container-lowest" id="pref_date" required="" type="date"/>
-</div>
-<!-- Submit Button -->
-<div class="sm:col-span-2 pt-space-sm">
-<button class="w-full bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary py-3.5 px-space-lg rounded-lg font-label-md text-label-md transition-all duration-200 active:scale-[0.99] flex items-center justify-center gap-2 shadow-sm" id="submit-btn" type="submit">
-<span class="material-symbols-outlined text-[20px]" data-icon="event_available">event_available</span>
-<span>Schedule 30-Min Discovery Session</span>
-</button>
-</div>
+<form id="how-consult-form" class="space-y-4" data-cb-validate onsubmit="event.preventDefault(); cbShowDiscoveryModal(this);">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div>
+      <label class="block text-xs font-semibold text-primary mb-1" for="howFullName">Full Name <span class="text-error">*</span></label>
+      <input class="w-full px-3.5 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-sm text-on-surface placeholder:text-outline/60" id="howFullName" name="fullName" type="text" required autocomplete="name" placeholder="e.g., Juan Dela Cruz">
+    </div>
+    <div>
+      <label class="block text-xs font-semibold text-primary mb-1" for="howWorkEmail">Work Email <span class="text-error">*</span></label>
+      <input class="w-full px-3.5 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-sm text-on-surface placeholder:text-outline/60" id="howWorkEmail" name="workEmail" type="email" required autocomplete="email" aria-describedby="howEmailHelp" placeholder="juan@yourcompany.com">
+      <p id="howEmailHelp" class="text-[11px] text-outline mt-1">We’ll send your calendar invite and a brief preparation checklist here.</p>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div>
+      <label class="block text-xs font-semibold text-primary mb-1" for="howCompanyName">Company / Registered Business Name</label>
+      <input class="w-full px-3.5 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-sm text-on-surface placeholder:text-outline/60" id="howCompanyName" name="companyName" type="text" autocomplete="organization" placeholder="e.g., Acme Solutions Inc. (or &quot;Not yet registered&quot;)">
+    </div>
+    <div>
+      <label class="block text-xs font-semibold text-primary mb-1" for="howEntityType">Business Entity Type <span class="text-error">*</span></label>
+      <select class="w-full px-3.5 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-sm text-on-surface placeholder:text-outline/60" id="howEntityType" name="entityType" required>
+        <option value="" disabled selected>Select your current registration status</option>
+        <option value="Sole Proprietorship (DTI)">Sole Proprietorship (DTI)</option>
+        <option value="Domestic Corporation (SEC)">Domestic Corporation (SEC)</option>
+        <option value="One Person Corporation (OPC)">One Person Corporation (OPC)</option>
+        <option value="Partnership">Partnership</option>
+        <option value="Freelancer / Self-Employed Professional">Freelancer / Self-Employed Professional</option>
+        <option value="Pre-launch / Planning to register">Pre-launch / Planning to register</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <label class="block text-xs font-semibold text-primary mb-1" for="howFocusArea">Primary Focus Area <span class="text-error">*</span></label>
+    <select class="w-full px-3.5 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-sm text-on-surface placeholder:text-outline/60" id="howFocusArea" name="focusArea" required>
+      <option value="" disabled selected>What do you need help with right now?</option>
+      <option value="Monthly Bookkeeping &amp; BIR Tax Filings">Monthly Bookkeeping &amp; BIR Tax Filings</option>
+      <option value="Catch-Up Accounting / Resolving BIR Open Cases">Catch-Up Accounting / Resolving BIR Open Cases</option>
+      <option value="SEC / DTI Business Registration &amp; Setup">SEC / DTI Business Registration &amp; Setup</option>
+      <option value="Payroll &amp; Statutory Compliance (SSS, PhilHealth, Pag-IBIG)">Payroll &amp; Statutory Compliance (SSS, PhilHealth, Pag-IBIG)</option>
+      <option value="Fractional CFO &amp; Financial Advisory">Fractional CFO &amp; Financial Advisory</option>
+    </select>
+  </div>
+  <div>
+    <label class="block text-xs font-semibold text-primary mb-1" for="howNotes">Tell us briefly about your current setup or pain points (Optional)</label>
+    <textarea class="w-full px-3.5 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all text-sm text-on-surface placeholder:text-outline/60" id="howNotes" name="notes" rows="3" placeholder="e.g., &quot;We’re a 10-person agency struggling to keep up with monthly VAT and withholding tax filings,&quot; or &quot;Looking to transition from a sole prop to an OPC this quarter.&quot;"></textarea>
+  </div>
+  <div class="pt-1">
+    <button class="w-full bg-secondary text-white hover:bg-secondary-container py-3.5 rounded-lg font-semibold text-sm transition-all duration-200 shadow-md flex items-center justify-center gap-2 active:scale-[0.98]" type="submit">
+      <span class="material-symbols-outlined text-[20px]" aria-hidden="true">send</span>
+      <span>Get My Custom Compliance Plan</span>
+    </button>
+  </div>
+  <p class="text-[11px] text-center text-outline leading-relaxed pt-1">
+    🔒 100% Confidential. Your business details are protected by strict CPA-client confidentiality. We never share your data or spam your inbox.
+  </p>
 </form>
 <!-- Confirmation state alert (hidden by default) -->
 <div class="hidden mt-space-md p-space-md rounded-lg bg-surface-container-highest border border-secondary text-primary" id="confirmation-banner">
@@ -842,29 +625,81 @@
 </div>
 </section>
 <!-- ================= FOOTER (From Shared Component JSON) ================= -->
-<footer class="w-full bg-primary dark:bg-tertiary border-t border-outline/30" id="contact">
-<div class="w-full px-gutter py-space-xl max-w-7xl mx-auto flex flex-col gap-space-lg">
-<!-- Top Brand Row in Footer -->
-<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-space-md pb-space-md border-b border-outline/20">
-<div>
-<a href="index.html" class="inline-block"><img src="assets/logo.png" alt="ClearBooks Advisory" class="h-7 w-auto brightness-0 invert"></a>
-<p class="font-body-sm text-body-sm text-on-primary-container max-w-lg mt-1">
-            Institutional Philippine bookkeeping, BIR tax defense, statutory corporate compliance, and outsourced CPA controllership.
-          </p>
-</div>
-</div>
-<!-- Footer Navigation Links -->
-<div class="flex flex-wrap gap-x-space-lg gap-y-space-sm items-center">
-<a class="text-on-primary-container font-normal hover:text-secondary-fixed transition-colors duration-150 font-label-sm text-label-sm" href="index.html">Privacy Policy</a>
-<a class="text-on-primary-container font-normal hover:text-secondary-fixed transition-colors duration-150 font-label-sm text-label-sm" href="terms-of-service.html">Terms of Service</a>
-<a class="text-on-primary font-bold hover:text-secondary-fixed transition-colors duration-150 font-label-sm text-label-sm" href="bir-compliance-guide.html">BIR Compliance Guide</a>
-<a class="text-on-primary-container font-normal hover:text-secondary-fixed transition-colors duration-150 font-label-sm text-label-sm" href="sec-disclosures.html">SEC Statutory Disclosures</a>
-<a class="text-on-primary-container font-normal hover:text-secondary-fixed transition-colors duration-150 font-label-sm text-label-sm" href="contact.html">Contact Support</a>
-</div>
-<!-- Statutory Copyright String (Exact match from JSON) -->
-<div class="text-on-primary-container font-body-sm text-body-sm pt-space-sm">
-        © 2026 ClearBooks Advisory All rights reserved.</div>
-</div>
+<footer class="w-full bg-[#001428] text-white border-t border-[#74777e]/30 mt-auto">
+  <div class="w-full px-6 py-12 max-w-7xl mx-auto flex flex-col gap-8">
+    <!-- Main Footer Architecture (4 Columns) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-10 border-b border-[#0f2942]">
+      <!-- Column 1: Brand, Positioning & Credentials -->
+      <div class="lg:col-span-4 flex flex-col gap-4">
+        <a href="index.html" class="inline-block w-fit">
+          <img src="assets/logo.png" alt="ClearBooks Advisory" class="h-7 w-auto brightness-0 invert">
+        </a>
+        <p class="text-sm text-[#b0c9e8] leading-relaxed">
+          PRC-accredited CPAs handling your Philippine bookkeeping, BIR tax filings, and SEC compliance.
+        </p>
+        <div class="flex flex-wrap items-center gap-2 pt-1">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#0f2942] border border-[#7991af]/30 text-xs font-medium text-[#d1e4ff]">
+            <span class="material-symbols-outlined text-[14px]" aria-hidden="true">verified</span>
+            PRC-Accredited CPAs
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#0f2942] border border-[#7991af]/30 text-xs font-medium text-[#d1e4ff]">
+            <span class="material-symbols-outlined text-[14px]" aria-hidden="true">shield</span>
+            BIR-Accredited Tax Practitioners
+          </span>
+        </div>
+      </div>
+
+      <!-- Column 2: Core Services -->
+      <div class="lg:col-span-3">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Core Services</h4>
+        <ul class="space-y-2.5 text-sm text-[#b0c9e8]">
+          <li><a class="hover:text-white transition-colors duration-150" href="index.html#services">Monthly Bookkeeping &amp; Tax Compliance</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="bir-compliance-guide.html#audit-shield">Catch-Up Accounting &amp; BIR Open Cases</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="sec-disclosures.html">SEC &amp; DTI Business Registration</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="corporate-compliance.html">Enterprise &amp; Controllership</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Company & Resources -->
+      <div class="lg:col-span-2">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Company &amp; Resources</h4>
+        <ul class="space-y-2.5 text-sm text-[#b0c9e8]">
+          <li><a class="hover:text-white transition-colors duration-150" href="cpa-credentials.html">Our Team</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="how-we-do-business.html">Our Process</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="index.html#packages">Retainer Packages</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="bir-compliance-guide.html">Tax Filing Guide</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact & Direct Action -->
+      <div class="lg:col-span-3 flex flex-col gap-3.5">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white">Contact &amp; Direct Action</h4>
+        <p class="text-xs text-[#b0c9e8] flex items-start gap-1.5 leading-relaxed">
+          <span class="material-symbols-outlined text-[15px] shrink-0 mt-0.5" aria-hidden="true">schedule</span>
+          <span>100% Remote Advisory Desk<br>Mon–Fri, 9:00 AM – 6:00 PM PHT</span>
+        </p>
+        <div>
+          <div class="text-xs text-[#7991af] mb-0.5">Email</div>
+          <a class="text-sm text-[#d1e4ff] hover:text-white font-medium break-all transition-colors duration-150" href="mailto:inquiry@clearbooksadvisory.online">inquiry@clearbooksadvisory.online</a>
+        </div>
+        <div class="pt-1">
+          <button type="button" onclick="cbOpenScheduleCallModal()" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#d1e4ff] text-[#001428] hover:bg-white text-sm font-semibold transition-colors duration-150 shadow-sm">
+            <span>Schedule a Consultation &rarr;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Legal & Compliance Bar -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#7991af]">
+      <p class="text-center md:text-left">© 2026 ClearBooks Advisory. All rights reserved.</p>
+      <div class="flex flex-wrap items-center justify-center gap-2">
+        <a class="hover:text-white transition-colors duration-150" href="privacy-policy.html">Privacy Policy</a>
+        <span aria-hidden="true">•</span>
+        <a class="hover:text-white transition-colors duration-150" href="terms-of-service.html">Terms of Engagement</a>
+      </div>
+    </div>
+  </div>
 </footer>
 <!-- Interactive Logic for Methodology Accordion, FAQ, and Form -->
 <script>
@@ -1043,12 +878,12 @@
 
 <dialog id="how-discovery-dialog" closedby="any" aria-labelledby="how-discovery-title" class="w-full max-w-md rounded-xl border border-outline-variant bg-white p-6 shadow-2xl text-on-surface">
   <div class="flex items-start justify-between gap-3 mb-3">
-    <h2 id="how-discovery-title" class="font-bold text-primary text-lg">30-Min Discovery Session Booked</h2>
+    <h2 id="how-discovery-title" class="font-bold text-primary text-lg">You’re on the calendar!</h2>
     <button type="button" onclick="document.getElementById('how-discovery-dialog').close()" class="p-1 rounded-lg hover:bg-surface-container-low" aria-label="Close">
       <span class="material-symbols-outlined" aria-hidden="true">close</span>
     </button>
   </div>
-  <p class="text-sm text-on-surface-variant leading-relaxed mb-5">Your onboarding discovery request has been received. A Senior CPA Engagement Lead will send a calendar invite and encrypted intake link within 2 business hours.</p>
+  <p class="text-sm text-on-surface-variant leading-relaxed mb-5">We’ll send you a confirmation email with your meeting link. If you have recent BIR filings or financial questions you’d like us to look at beforehand, simply reply to that email—our team will review them ahead of our call.</p>
   <div class="flex gap-2.5">
     <button type="button" onclick="cbDownloadSlaProtocol()" class="flex-1 px-4 py-2.5 rounded-lg border border-outline-variant text-primary text-sm font-semibold hover:bg-surface-container-low">Download SLA Protocol</button>
     <button type="button" onclick="document.getElementById('how-discovery-dialog').close()" class="px-4 py-2.5 rounded-lg bg-secondary text-white text-sm font-semibold hover:bg-secondary-container">Done</button>
@@ -1056,20 +891,25 @@
 </dialog>
 <script>
 async function cbShowDiscoveryModal(form) {
-  const inputs = Array.from(form.querySelectorAll("input, select"));
-  const fullName = inputs[0]?.value || "";
-  const contact = [inputs[1]?.value, inputs[2]?.value].filter(Boolean).join(" / ");
-  const businessStructure = inputs[3]?.value || "";
-  const notes = [inputs[4]?.value, inputs[5]?.value].filter(Boolean).join(" | ");
+  const fullName = form.querySelector("[name='fullName']")?.value || "";
+  const email = form.querySelector("[name='workEmail']")?.value || "";
+  const company = form.querySelector("[name='companyName']")?.value || "";
+  const entity = form.querySelector("[name='entityType']")?.value || "";
+  const focus = form.querySelector("[name='focusArea']")?.value || "";
+  const notes = form.querySelector("[name='notes']")?.value || "";
   if (window.cbSubmitConsultationToSheet) {
     await window.cbSubmitConsultationToSheet({
-      formType: "30-Min Discovery Session",
+      formType: "20-Min Diagnostic Strategy Session",
       fullName,
-      contact,
-      businessStructure,
-      notes,
+      contact: email,
+      businessStructure: [company, entity].filter(Boolean).join(" — "),
+      notes: [focus, notes].filter(Boolean).join(" | "),
       sourcePage: "how-we-do-business.html"
     });
+  }
+  document.getElementById("how-discovery-dialog").showModal();
+  form.reset();
+});
   }
   document.getElementById("how-discovery-dialog").showModal();
   form.reset();

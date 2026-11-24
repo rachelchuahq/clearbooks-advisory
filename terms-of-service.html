@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="assets/clearbooks.css">
   <script src="assets/clearbooks.js" defer></script>
 </head>
-<body class="bg-surface text-on-surface font-sans antialiased selection:bg-secondary/20">
+<body class="min-h-screen flex flex-col bg-surface text-on-surface font-sans antialiased selection:bg-secondary/20">
   <header class="w-full bg-white shadow-sm border-b border-[#c3c6ce]/30 sticky top-0 z-50">
   <div class="flex justify-between items-center w-full px-6 max-w-7xl mx-auto h-20">
     <!-- Brand Logo -->
@@ -51,7 +51,7 @@
     <!-- Desktop Nav Links -->
     <nav class="hidden md:flex items-center gap-7" aria-label="Primary">
       <a class="text-[#43474d] font-medium py-1 hover:text-[#1d4ed8] transition-colors duration-150 text-sm tracking-[0.01em]" href="index.html">Home</a>
-      <a class="text-[#43474d] font-medium py-1 hover:text-[#1d4ed8] transition-colors duration-150 text-sm tracking-[0.01em]" href="how-we-do-business.html">Why Us</a>
+      <a class="text-[#43474d] font-medium py-1 hover:text-[#1d4ed8] transition-colors duration-150 text-sm tracking-[0.01em]" href="how-we-do-business.html">Our Process</a>
       <a class="text-[#43474d] font-medium py-1 hover:text-[#1d4ed8] transition-colors duration-150 text-sm tracking-[0.01em]" href="contact.html">Contact Us</a>
     </nav>
 
@@ -72,8 +72,7 @@
 
   <ul id="mobile-nav-menu" popover="auto" class="space-y-1 text-sm font-medium text-[#0d1c2f]">
     <li><a href="index.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Home</a></li>
-    <li></li>
-    <li><a href="how-we-do-business.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Why Us</a></li>
+    <li><a href="how-we-do-business.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Our Process</a></li>
     <li><a href="bir-compliance-guide.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">BIR Compliance Guide</a></li>
     <li><a href="corporate-compliance.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Corporate &amp; SME Compliance</a></li>
     <li><a href="contact.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Contact Us</a></li>
@@ -83,78 +82,130 @@
 
   <main>
     <section class="bg-primary text-white py-14 sm:py-20 border-b border-white/10">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-blue-200 text-xs font-semibold mb-4">
           <span class="material-symbols-outlined text-[16px]" aria-hidden="true">contract</span>
-          <span>ClearBooks Advisory Engagement Terms</span>
+          <span>Website &amp; Pre-Engagement Terms</span>
         </div>
-        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight max-w-3xl leading-tight">Terms of Service & 48-Hour Advisory SLA</h1>
-        <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">Transparent service commitments, filing accuracy guarantees, and client responsibilities governing ClearBooks Advisory engagements.</p>
+        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">Terms of Engagement Summary</h1>
+        <p class="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">Effective Date: November 2026 &bull; Transparent scope, client responsibilities, and confidentiality standards governing ClearBooks Advisory.</p>
       </div>
     </section>
 
     <section class="py-12 sm:py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="bg-white rounded-2xl border border-outline-variant/60 p-6 sm:p-8 space-y-5 text-sm text-on-surface-variant leading-relaxed max-w-4xl">
+        <div class="mx-auto bg-white rounded-2xl border border-outline-variant/60 p-6 sm:p-10 space-y-8 text-sm text-on-surface-variant leading-relaxed max-w-4xl shadow-sm">
           <div>
-            <h2 class="text-lg font-bold text-primary mb-1.5">1. Scope of Bookkeeping &amp; Tax Services</h2>
-            <p>ClearBooks Advisory performs monthly transaction classification, bank reconciliation, statutory BIR eFPS/eBIRForms preparation, and financial reporting based on complete source documents provided by the client.</p>
+            <h2 class="text-lg font-bold text-primary mb-2">1. Website Content &amp; No Automatic CPA-Client Relationship</h2>
+            <p>All articles, tax calendars, checklists, and diagnostic estimates published on <span class="font-medium text-primary">clearbooksadvisory.online</span> are provided for general informational purposes only and do not constitute formal accounting, tax, or legal advice. Submitting a contact form or attending a complimentary 20-minute diagnostic call does not establish a formal CPA-client or fiduciary relationship.</p>
           </div>
+
           <div>
-            <h2 class="text-lg font-bold text-primary mb-1.5">2. 48-Hour SLA &amp; Accuracy Guarantee</h2>
-            <p>We guarantee responses to client inquiries within 48 business hours. If a late filing penalty occurs due to ClearBooks Advisory error after timely client document submission and tax fund availability, ClearBooks Advisory absorbs the surcharge.</p>
+            <h2 class="text-lg font-bold text-primary mb-2">2. Formal Engagement &amp; Scope of Work</h2>
+            <p class="mb-2">Professional services begin only upon the mutual signing of a formal Engagement Letter / Service Agreement and settlement of the agreed onboarding fee or retainer.</p>
+            <p>Each Engagement Letter defines the exact scope of deliverables (e.g., monthly bookkeeping, BIR tax filings, catch-up accounting, or SEC registration), filing deadlines, client responsibilities, and fee structure.</p>
           </div>
+
           <div>
-            <h2 class="text-lg font-bold text-primary mb-1.5">3. Flexible Month-to-Month Engagements</h2>
-            <p>Standard Freelancer and SMB packages operate on transparent monthly retainers with 30-day notice for cancellation and full handover of digital ledgers and BIR/SEC archives.</p>
+            <h2 class="text-lg font-bold text-primary mb-2">3. Client Responsibilities &amp; Accuracy of Records</h2>
+            <p class="mb-2">Timely and accurate tax and regulatory filings depend on the complete, truthful, and prompt submission of source documents (official receipts, sales invoices, bank statements, payroll logs, and prior BIR/SEC records) by the client on or before agreed monthly cutoff dates.</p>
+            <p>ClearBooks Advisory is not liable for penalties, surcharges, or interest resulting from late document submission, undisclosed transactions, or inaccurate records provided by the client.</p>
+          </div>
+
+          <div>
+            <h2 class="text-lg font-bold text-primary mb-2">4. Confidentiality &amp; Professional Standards</h2>
+            <p>All financial records, credentials, and business information shared during both pre-engagement diagnostics and active retainers are treated with strict confidentiality in accordance with Philippine accountancy ethical standards and RA 10173.</p>
+          </div>
+
+          <div>
+            <h2 class="text-lg font-bold text-primary mb-2">5. Governing Law</h2>
+            <p>These terms and all service engagements are governed by and construed in accordance with the laws of the Republic of the Philippines.</p>
+          </div>
+
+          <div class="pt-4 border-t border-outline-variant/40 flex flex-wrap items-center justify-between gap-4">
+            <a href="privacy-policy.html" class="text-secondary font-semibold hover:underline">&larr; View Privacy Policy (RA 10173)</a>
+            <a href="contact.html" class="px-5 py-2.5 rounded-lg bg-secondary text-white font-semibold hover:bg-secondary-container transition-colors">Schedule a Consultation</a>
           </div>
         </div>
-        
       </div>
     </section>
   </main>
 
-  <footer class="bg-primary text-slate-300 border-t border-white/10 py-14">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
-        <div class="space-y-3">
-          <a href="index.html" class="inline-block"><img src="assets/logo.png" alt="ClearBooks Advisory" class="h-7 w-auto brightness-0 invert"></a>
-          <p class="text-xs text-slate-400 leading-relaxed">Meticulous Philippine bookkeeping, BIR tax compliance, and SEC corporate advisory led by PRC-accredited CPAs.</p>
-        </div>
-        <div>
-          <h3 class="text-white font-semibold text-sm mb-3">Practice Areas</h3>
-          <ul class="space-y-2 text-xs">
-            <li><a href="index.html#freelancers" class="hover:text-white">Freelancer Packages</a></li>
-            <li><a href="index.html#smbs" class="hover:text-white">Small Business Essentials</a></li>
-            <li><a href="corporate-compliance.html" class="hover:text-white">Corporate Bookkeeping</a></li>
-            <li><a href="how-we-do-business.html" class="hover:text-white">How We Do Business</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-white font-semibold text-sm mb-3">Compliance Resources</h3>
-          <ul class="space-y-2 text-xs">
-            <li><a href="bir-compliance-guide.html" class="hover:text-white">BIR Compliance Guide</a></li>
-            <li><a href="sec-disclosures.html" class="hover:text-white">SEC Statutory Disclosures</a></li>
-            <li><a href="efps-portal-guide.html" class="hover:text-white">eFPS Step-by-Step Portal</a></li>
-            <li><a href="cpa-credentials.html" class="hover:text-white">CPA Accreditation Credentials</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-white font-semibold text-sm mb-3">Legal &amp; Support</h3>
-          <ul class="space-y-2 text-xs">
-            <li><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a></li>
-            <li><a href="terms-of-service.html" class="hover:text-white">Terms of Service</a></li>
-            <li><a href="security.html" class="hover:text-white">Security</a></li>
-            <li><a href="contact.html" class="hover:text-white">Contact Support</a></li>
-          </ul>
+  <footer class="w-full bg-[#001428] text-white border-t border-[#74777e]/30 mt-auto">
+  <div class="w-full px-6 py-12 max-w-7xl mx-auto flex flex-col gap-8">
+    <!-- Main Footer Architecture (4 Columns) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-10 border-b border-[#0f2942]">
+      <!-- Column 1: Brand, Positioning & Credentials -->
+      <div class="lg:col-span-4 flex flex-col gap-4">
+        <a href="index.html" class="inline-block w-fit">
+          <img src="assets/logo.png" alt="ClearBooks Advisory" class="h-7 w-auto brightness-0 invert">
+        </a>
+        <p class="text-sm text-[#b0c9e8] leading-relaxed">
+          PRC-accredited CPAs handling your Philippine bookkeeping, BIR tax filings, and SEC compliance.
+        </p>
+        <div class="flex flex-wrap items-center gap-2 pt-1">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#0f2942] border border-[#7991af]/30 text-xs font-medium text-[#d1e4ff]">
+            <span class="material-symbols-outlined text-[14px]" aria-hidden="true">verified</span>
+            PRC-Accredited CPAs
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#0f2942] border border-[#7991af]/30 text-xs font-medium text-[#d1e4ff]">
+            <span class="material-symbols-outlined text-[14px]" aria-hidden="true">shield</span>
+            BIR-Accredited Tax Practitioners
+          </span>
         </div>
       </div>
-      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-        <p>© 2026 ClearBooks Advisory All rights reserved.</p>
-        <p>RA 10173 Data Privacy Act Compliant</p>
+
+      <!-- Column 2: Core Services -->
+      <div class="lg:col-span-3">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Core Services</h4>
+        <ul class="space-y-2.5 text-sm text-[#b0c9e8]">
+          <li><a class="hover:text-white transition-colors duration-150" href="index.html#services">Monthly Bookkeeping &amp; Tax Compliance</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="bir-compliance-guide.html#audit-shield">Catch-Up Accounting &amp; BIR Open Cases</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="sec-disclosures.html">SEC &amp; DTI Business Registration</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="corporate-compliance.html">Enterprise &amp; Controllership</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Company & Resources -->
+      <div class="lg:col-span-2">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Company &amp; Resources</h4>
+        <ul class="space-y-2.5 text-sm text-[#b0c9e8]">
+          <li><a class="hover:text-white transition-colors duration-150" href="cpa-credentials.html">Our Team</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="how-we-do-business.html">Our Process</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="index.html#packages">Retainer Packages</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="bir-compliance-guide.html">Tax Filing Guide</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact & Direct Action -->
+      <div class="lg:col-span-3 flex flex-col gap-3.5">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white">Contact &amp; Direct Action</h4>
+        <p class="text-xs text-[#b0c9e8] flex items-start gap-1.5 leading-relaxed">
+          <span class="material-symbols-outlined text-[15px] shrink-0 mt-0.5" aria-hidden="true">schedule</span>
+          <span>100% Remote Advisory Desk<br>Mon–Fri, 9:00 AM – 6:00 PM PHT</span>
+        </p>
+        <div>
+          <div class="text-xs text-[#7991af] mb-0.5">Email</div>
+          <a class="text-sm text-[#d1e4ff] hover:text-white font-medium break-all transition-colors duration-150" href="mailto:inquiry@clearbooksadvisory.online">inquiry@clearbooksadvisory.online</a>
+        </div>
+        <div class="pt-1">
+          <button type="button" onclick="cbOpenScheduleCallModal()" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#d1e4ff] text-[#001428] hover:bg-white text-sm font-semibold transition-colors duration-150 shadow-sm">
+            <span>Schedule a Consultation &rarr;</span>
+          </button>
+        </div>
       </div>
     </div>
-  </footer>
+
+    <!-- Bottom Legal & Compliance Bar -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#7991af]">
+      <p class="text-center md:text-left">© 2026 ClearBooks Advisory. All rights reserved.</p>
+      <div class="flex flex-wrap items-center justify-center gap-2">
+        <a class="hover:text-white transition-colors duration-150" href="privacy-policy.html">Privacy Policy</a>
+        <span aria-hidden="true">•</span>
+        <a class="hover:text-white transition-colors duration-150" href="terms-of-service.html">Terms of Engagement</a>
+      </div>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

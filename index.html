@@ -151,7 +151,7 @@
     <!-- Desktop Nav Links -->
     <nav class="hidden md:flex items-center gap-7" aria-label="Primary">
       <a class="bg-emerald-100 text-emerald-800 border border-emerald-300 px-3 py-1.5 rounded-lg font-bold transition-all duration-200 text-sm tracking-[0.01em]" href="index.html" aria-current="page">Home</a>
-      <a class="text-[#43474d] font-medium py-1 hover:text-[#1d4ed8] transition-colors duration-150 text-sm tracking-[0.01em]" href="how-we-do-business.html">Why Us</a>
+      <a class="text-[#43474d] font-medium py-1 hover:text-[#1d4ed8] transition-colors duration-150 text-sm tracking-[0.01em]" href="how-we-do-business.html">Our Process</a>
       <a class="text-[#43474d] font-medium py-1 hover:text-[#1d4ed8] transition-colors duration-150 text-sm tracking-[0.01em]" href="contact.html">Contact Us</a>
     </nav>
 
@@ -160,9 +160,9 @@
       <button type="button" data-open-search aria-label="Search ClearBooks" class="p-2 rounded-lg text-[#43474d] hover:text-[#1d4ed8] hover:bg-[#eff4ff] transition-colors duration-150">
         <span class="material-symbols-outlined text-[22px]" aria-hidden="true">search</span>
       </button>
-      <a class="hidden sm:inline-flex items-center justify-center bg-[#1d4ed8] hover:bg-[#0039b5] text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 active:scale-[0.98] shadow-sm" href="#consultation">
+      <button type="button" onclick="cbOpenScheduleCallModal()" class="hidden sm:inline-flex items-center justify-center bg-[#1d4ed8] hover:bg-[#0039b5] text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 active:scale-[0.98] shadow-sm">
         Book Consultation
-      </a>
+      </button>
       <button type="button" class="md:hidden inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-[#c3c6ce] text-[#001428] text-sm font-semibold hover:bg-[#eff4ff]" popovertarget="mobile-nav-menu" popovertargetaction="toggle" aria-controls="mobile-nav-menu">
         <span class="material-symbols-outlined text-[20px]" aria-hidden="true">menu</span>
         <span>Menu</span>
@@ -173,11 +173,11 @@
   <ul id="mobile-nav-menu" popover="auto" class="space-y-1 text-sm font-medium text-[#0d1c2f]">
     <li><a href="index.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Home</a></li>
     <li></li>
-    <li><a href="how-we-do-business.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Why Us</a></li>
+    <li><a href="how-we-do-business.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Our Process</a></li>
     <li><a href="bir-compliance-guide.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">BIR Compliance Guide</a></li>
     <li><a href="corporate-compliance.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Corporate &amp; SME Compliance</a></li>
     <li><a href="contact.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Contact Us</a></li>
-    <li class="pt-2 border-t border-[#c3c6ce]/40"><a href="#consultation" class="block text-center px-3 py-2.5 rounded-lg bg-[#1d4ed8] text-white font-semibold">Book Consultation</a></li>
+    <li class="pt-2 border-t border-[#c3c6ce]/40"><button type="button" onclick="document.getElementById(\'mobile-nav-menu\')?.hidePopover?.(); cbOpenScheduleCallModal();" class="w-full block text-center px-3 py-2.5 rounded-lg bg-[#1d4ed8] text-white font-semibold">Book Consultation</button></li>
   </ul>
 </header>
 <!-- Main Content Container -->
@@ -187,11 +187,6 @@
 <div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 <!-- Left Hero Column -->
 <div class="lg:col-span-7 flex flex-col items-start gap-6">
-<!-- Accreditation Badge -->
-<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm border border-secondary-fixed-dim/60 shadow-xs">
-<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
-<span>Accredited Accounting &amp; Tax Compliance (Philippines)</span>
-</div>
 <!-- Hero Headline -->
 <h1 class="font-display-hero text-display-hero text-primary tracking-tight">
             Keeping Your Books Clear, <span class="text-secondary">So You Can Focus</span> on What Matters
@@ -372,7 +367,7 @@
           </p>
 </div>
 <!-- 2-Column Wide Desktop Comparison Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch"><div class="bg-surface-container-lowest border border-outline-variant/70 rounded-xl p-8 custom-shadow-card flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:border-secondary hover:z-10" id="freelancers"><div><div class="flex flex-col items-start gap-1.5 mb-4"><span class="px-3 py-1 rounded-full bg-surface-container-high text-secondary font-label-sm font-semibold">Individual / Sole</span><span class="text-outline font-label-sm">Freelancers &amp; Sole Proprietors</span></div><h3 class="font-headline-lg text-headline-lg text-primary mb-2">Freelancer Packages</h3><p class="font-body-md text-body-md text-on-surface-variant mb-6">Stay compliant without the stress. Our packages cover setting up, bookkeeping, basic tax filing, and financial statements—perfect for solo freelancers and professionals who need simple, reliable support.</p><div class="h-px bg-outline-variant/30 my-6"></div><div class="space-y-4 mb-8"><div class="font-label-md text-primary mb-2">Package Inclusions:</div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Business Registration Assistance</span><p class="font-body-sm text-outline">BIR 1901 guidance, DTI registration support, and statutory books acquisition.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Monthly Bookkeeping</span><p class="font-body-sm text-outline">Accurate journal entries, recording official receipts, and invoice reconciliation.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Basic Tax Filing BIR Form 1701Q / 2551Q</span><p class="font-body-sm text-outline">Quarterly percentage tax, graduated income tax filing, and withholding tax certificates (2307).</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Year-End Financial Statements</span><p class="font-body-sm text-outline">Compilation of annual balance sheet, statement of earnings, and BIR 1701 submission.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Dedicated Support</span><p class="font-body-sm text-outline">Direct messaging channel with your assigned licensed tax accountant.</p></div></div></div></div><div><button type="button" onclick="openScheduleCallModal('solo')" class="w-full bg-surface-container-lowest border-2 border-secondary text-secondary hover:bg-secondary hover:text-on-secondary py-3.5 rounded-lg font-label-md transition-all duration-200 flex items-center justify-center gap-2 text-center active:scale-[0.98]"><span>Schedule a Call</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></button></div></div><div class="bg-surface-container-lowest border-2 border-secondary rounded-xl p-8 custom-shadow-elevated flex flex-col justify-between relative transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:z-10" id="smbs"><div class="absolute -top-3.5 right-8"><span class="px-3.5 py-1 rounded-full bg-secondary text-on-secondary font-label-sm font-bold tracking-wide uppercase shadow-sm">Most Popular</span></div><div><div class="flex flex-col items-start gap-1.5 mb-4"><span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm font-semibold">SME &amp; Corporate</span><span class="text-outline font-label-sm">OPC, Partnerships, &amp; Corps</span></div><h3 class="font-headline-lg text-headline-lg text-primary mb-2">Small Business Essentials</h3><p class="font-body-md text-body-md text-on-surface-variant mb-6">Running a registered business? This all-in-one solution handles your monthly books, tax filing, reconciliations, and financial reports—ideal for shops, agencies, and small teams.</p><div class="h-px bg-outline-variant/30 my-6"></div><div class="space-y-4 mb-8"><div class="font-label-md text-primary mb-2">Package Inclusions:</div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Complete Monthly Bookkeeping</span><p class="font-body-sm text-outline">Full double-entry general ledger, expense tracking, accounts payable, and receivable management.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Corporate Tax &amp; BIR Compliance</span><p class="font-body-sm text-outline">VAT / Non-VAT preparation, Expanded Withholding Tax (BIR Form 0619E/1601EQ), and SLSP filing.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Bank &amp; Account Reconciliation</span><p class="font-body-sm text-outline">End-to-end matching of company bank accounts, payment gateways, and petty cash.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Monthly Financial Statements (P&amp;L / Balance Sheet)</span><p class="font-body-sm text-outline">Executive financial packs with cash flow statements and executive KPI commentaries.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Payroll &amp; Gov't Contributions (SSS/PhilHealth/Pag-IBIG)</span><p class="font-body-sm text-outline">Seamless employee statutory calculation, reporting, and contribution ledger generation.</p></div></div></div></div><div><button type="button" onclick="openScheduleCallModal('corporation')" class="w-full bg-secondary text-on-secondary hover:bg-secondary-container py-3.5 rounded-lg font-label-md transition-all duration-200 flex items-center justify-center gap-2 text-center shadow-md active:scale-[0.98]"><span>Schedule a Call</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></button></div></div><div class="bg-surface-container-lowest border border-outline-variant/70 rounded-xl p-8 custom-shadow-card flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:border-secondary hover:z-10" id="corporate-sme"><div><div class="flex flex-col items-start gap-1.5 mb-4"><span class="px-3 py-1 rounded-full bg-surface-container-high text-secondary font-label-sm font-semibold">Enterprise / Scaling</span><span class="text-outline font-label-sm">VAT-Registered • 10–50 Employees</span></div><h3 class="font-headline-lg text-headline-lg text-primary mb-2">Growth &amp; Corporate SME</h3><p class="font-body-md text-body-md text-on-surface-variant mb-6">Comprehensive fiscal infrastructure, advanced BIR VAT compliance, multi-tier payroll, and dedicated CPA controller advisory for scaling enterprises.</p><div class="h-px bg-outline-variant/30 my-6"></div><div class="space-y-4 mb-8"><div class="font-label-md text-primary mb-2">Package Inclusions:</div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Advanced Monthly VAT Filing &amp; SAWT/SLSP</span><p class="font-body-sm text-outline">BIR 2550Q / 1601EQ / 0619E corporate tax filing with comprehensive compliance audit trails.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Multi-tier Payroll &amp; Gov't Remittances</span><p class="font-body-sm text-outline">Dedicated payroll runs for up to 50 staff covering SSS, PhilHealth, Pag-IBIG, and 2316 filings.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Audited Financial Statements (AFS) Prep</span><p class="font-body-sm text-outline">Year-end external audit preparation and complete SEC Annual Filing support.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Quarterly Tax Strategy &amp; Audit Advisory</span><p class="font-body-sm text-outline">Proactive tax planning sessions and BIR RDO audit representation advisory.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Dedicated Senior CPA Controller</span><p class="font-body-sm text-outline">Designated CPA controller with priority direct Slack/Channel and phone access.</p></div></div></div></div><div><button type="button" onclick="openScheduleCallModal(\'corporation\')" class="w-full bg-surface-container-lowest border-2 border-secondary text-secondary hover:bg-secondary hover:text-on-secondary py-3.5 rounded-lg font-label-md transition-all duration-200 flex items-center justify-center gap-2 text-center active:scale-[0.98]"><span>Schedule a Call</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></button></div></div></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch"><div class="bg-surface-container-lowest border border-outline-variant/70 rounded-xl p-8 custom-shadow-card flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:border-secondary hover:z-10" id="freelancers"><div><div class="flex flex-col items-start gap-1.5 mb-4"><span class="px-3 py-1 rounded-full bg-surface-container-high text-secondary font-label-sm font-semibold">Individual / Sole</span><span class="text-outline font-label-sm">Freelancers &amp; Sole Proprietors</span></div><h3 class="font-headline-lg text-headline-lg text-primary mb-2">Freelancer Packages</h3><p class="font-body-md text-body-md text-on-surface-variant mb-6">Stay compliant without the stress. Our packages cover setting up, bookkeeping, basic tax filing, and financial statements—perfect for solo freelancers and professionals who need simple, reliable support.</p><div class="h-px bg-outline-variant/30 my-6"></div><div class="space-y-4 mb-8"><div class="font-label-md text-primary mb-2">Package Inclusions:</div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Business Registration Assistance</span><p class="font-body-sm text-outline">BIR 1901 guidance, DTI registration support, and statutory books acquisition.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Monthly Bookkeeping</span><p class="font-body-sm text-outline">Accurate journal entries, recording official receipts, and invoice reconciliation.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Basic Tax Filing BIR Form 1701Q / 2551Q</span><p class="font-body-sm text-outline">Quarterly percentage tax, graduated income tax filing, and withholding tax certificates (2307).</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Year-End Financial Statements</span><p class="font-body-sm text-outline">Compilation of annual balance sheet, statement of earnings, and BIR 1701 submission.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Dedicated Support</span><p class="font-body-sm text-outline">Direct messaging channel with your assigned licensed tax accountant.</p></div></div></div></div><div><button type="button" onclick="openScheduleCallModal('solo')" class="w-full bg-surface-container-lowest border-2 border-secondary text-secondary hover:bg-secondary hover:text-on-secondary py-3.5 rounded-lg font-label-md transition-all duration-200 flex items-center justify-center gap-2 text-center active:scale-[0.98]"><span>Schedule a Call</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></button></div></div><div class="bg-surface-container-lowest border-2 border-secondary rounded-xl p-8 custom-shadow-elevated flex flex-col justify-between relative transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:z-10" id="smbs"><div class="absolute -top-3.5 right-8"><span class="px-3.5 py-1 rounded-full bg-secondary text-on-secondary font-label-sm font-bold tracking-wide uppercase shadow-sm">Most Popular</span></div><div><div class="flex flex-col items-start gap-1.5 mb-4"><span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm font-semibold">SME &amp; Corporate</span><span class="text-outline font-label-sm">OPC, Partnerships, &amp; Corps</span></div><h3 class="font-headline-lg text-headline-lg text-primary mb-2">Small Business Essentials</h3><p class="font-body-md text-body-md text-on-surface-variant mb-6">Running a registered business? This all-in-one solution handles your monthly books, tax filing, reconciliations, and financial reports—ideal for shops, agencies, and small teams.</p><div class="h-px bg-outline-variant/30 my-6"></div><div class="space-y-4 mb-8"><div class="font-label-md text-primary mb-2">Package Inclusions:</div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Complete Monthly Bookkeeping</span><p class="font-body-sm text-outline">Full double-entry general ledger, expense tracking, accounts payable, and receivable management.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Corporate Tax &amp; BIR Compliance</span><p class="font-body-sm text-outline">VAT / Non-VAT preparation, Expanded Withholding Tax (BIR Form 0619E/1601EQ), and SLSP filing.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Bank &amp; Account Reconciliation</span><p class="font-body-sm text-outline">End-to-end matching of company bank accounts, payment gateways, and petty cash.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Monthly Financial Statements (P&amp;L / Balance Sheet)</span><p class="font-body-sm text-outline">Executive financial packs with cash flow statements and executive KPI commentaries.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Payroll &amp; Gov't Contributions (SSS/PhilHealth/Pag-IBIG)</span><p class="font-body-sm text-outline">Seamless employee statutory calculation, reporting, and contribution ledger generation.</p></div></div></div></div><div><button type="button" onclick="openScheduleCallModal('corporation')" class="w-full bg-secondary text-on-secondary hover:bg-secondary-container py-3.5 rounded-lg font-label-md transition-all duration-200 flex items-center justify-center gap-2 text-center shadow-md active:scale-[0.98]"><span>Schedule a Call</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></button></div></div><div class="bg-surface-container-lowest border border-outline-variant/70 rounded-xl p-8 custom-shadow-card flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:border-secondary hover:z-10" id="corporate-sme"><div><div class="flex flex-col items-start gap-1.5 mb-4"><span class="px-3 py-1 rounded-full bg-surface-container-high text-secondary font-label-sm font-semibold">Enterprise / Scaling</span><span class="text-outline font-label-sm">VAT-Registered • 10–50 Employees</span></div><h3 class="font-headline-lg text-headline-lg text-primary mb-2">Growth &amp; Corporate SME</h3><p class="font-body-md text-body-md text-on-surface-variant mb-6">Comprehensive fiscal infrastructure, advanced BIR VAT compliance, multi-tier payroll, and dedicated CPA controller advisory for scaling enterprises.</p><div class="h-px bg-outline-variant/30 my-6"></div><div class="space-y-4 mb-8"><div class="font-label-md text-primary mb-2">Package Inclusions:</div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Advanced Monthly VAT Filing &amp; SAWT/SLSP</span><p class="font-body-sm text-outline">BIR 2550Q / 1601EQ / 0619E corporate tax filing with comprehensive compliance audit trails.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Multi-tier Payroll &amp; Gov't Remittances</span><p class="font-body-sm text-outline">Dedicated payroll runs for up to 50 staff covering SSS, PhilHealth, Pag-IBIG, and 2316 filings.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Audited Financial Statements (AFS) Prep</span><p class="font-body-sm text-outline">Year-end external audit preparation and complete SEC Annual Filing support.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Quarterly Tax Strategy &amp; Audit Advisory</span><p class="font-body-sm text-outline">Proactive tax planning sessions and BIR RDO audit representation advisory.</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span><div><span class="font-label-md text-on-surface">Dedicated Senior CPA Controller</span><p class="font-body-sm text-outline">Designated CPA controller with priority direct Slack/Channel and phone access.</p></div></div></div></div><div><button type="button" onclick="openScheduleCallModal('corporation')" class="w-full bg-surface-container-lowest border-2 border-secondary text-secondary hover:bg-secondary hover:text-on-secondary py-3.5 rounded-lg font-label-md transition-all duration-200 flex items-center justify-center gap-2 text-center active:scale-[0.98]"><span>Schedule a Call</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></button></div></div></div>
 </div>
 </section>
 <!-- Why ClearBooks Advisory Section -->
@@ -400,7 +395,7 @@
 </div>
 <h3 class="font-headline-md text-headline-md text-primary mb-3">Accredited &amp; Accurate</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-              Every return, financial statement, and balance sheet is prepared by licensed CPAs with active Philippine BOA and BIR tax agent accreditations. We mitigate audit flags before they arise.
+              Every return, financial statement, and balance sheet is executed by your dedicated accounting pod and formally CPA-reviewed and signed off under Philippine BOA and BIR standards. We mitigate audit flags before they arise.
             </p>
 <div class="mt-6 pt-4 border-t border-outline-variant/20 w-full flex items-center gap-2 text-secondary font-label-sm">
 <span class="material-symbols-outlined text-[16px]">verified</span>
@@ -467,29 +462,29 @@
             End-to-End Accounting, Tax Filing &amp; Regulatory Advisory
           </h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant">
-            Every administrative necessity covered under one roof by credentialed Philippine CPAs.
+            Pod-based execution backed by CPA-led governance, PFRS-aligned oversight, and formal sign-off under one roof.
           </p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 <div class="p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/40 custom-shadow-card">
 <span class="material-symbols-outlined text-secondary text-[32px] mb-4">corporate_fare</span>
-<h4 class="font-headline-md text-[18px] text-primary mb-2">Business Registration</h4>
-<p class="font-body-sm text-outline">Full incorporation, DTI or SEC filings, Mayor’s Permit, and BIR Certificate of Registration (Form 2303).</p>
+<h4 class="font-headline-md text-[18px] text-primary mb-2">Institutional Philippine Bookkeeping</h4>
+<p class="font-body-sm text-outline">Full-cycle ledger maintenance, bank reconciliations, and compliant books of accounts handled by your dedicated accounting pod with monthly CPA-reviewed closing cycles and PFRS-aligned reporting.</p>
 </div>
 <div class="p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/40 custom-shadow-card">
-<span class="material-symbols-outlined text-secondary text-[32px] mb-4">menu_book</span>
-<h4 class="font-headline-md text-[18px] text-primary mb-2">Monthly Bookkeeping</h4>
-<p class="font-body-sm text-outline">Accurate journal maintenance, ledger reconciliation, and compliant binding of official books of accounts.</p>
+<span class="material-symbols-outlined text-secondary text-[32px] mb-4">shield</span>
+<h4 class="font-headline-md text-[18px] text-primary mb-2">BIR Tax Defense &amp; Filing</h4>
+<p class="font-body-sm text-outline">Quarterly and annual income tax returns, withholding schedules, and eFPS/eBIRForms filings prepared by your pod and formally CPA-signed off to prevent surcharges, open cases, and audit flags.</p>
 </div>
 <div class="p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/40 custom-shadow-card">
-<span class="material-symbols-outlined text-secondary text-[32px] mb-4">account_balance_wallet</span>
-<h4 class="font-headline-md text-[18px] text-primary mb-2">Tax Preparation &amp; Filing</h4>
-<p class="font-body-sm text-outline">Quarterly &amp; annual income tax returns, monthly remittance returns, and withholding taxes filed accurately.</p>
+<span class="material-symbols-outlined text-secondary text-[32px] mb-4">gavel</span>
+<h4 class="font-headline-md text-[18px] text-primary mb-2">Statutory Corporate Compliance</h4>
+<p class="font-body-sm text-outline">End-to-end SEC GIS and eFAST submissions, business registration, and monthly SSS, PhilHealth, and Pag-IBIG statutory remittances managed on schedule with CPA-governed compliance tracking.</p>
 </div>
 <div class="p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/40 custom-shadow-card">
-<span class="material-symbols-outlined text-secondary text-[32px] mb-4">payments</span>
-<h4 class="font-headline-md text-[18px] text-primary mb-2">Payroll &amp; Government Dues</h4>
-<p class="font-body-sm text-outline">Timely automated payslip generation and statutory remittances to SSS, PhilHealth, and Pag-IBIG.</p>
+<span class="material-symbols-outlined text-secondary text-[32px] mb-4">verified_user</span>
+<h4 class="font-headline-md text-[18px] text-primary mb-2">Outsourced CPA Controllership</h4>
+<p class="font-body-sm text-outline">Dedicated accounting execution backed by CPA-level governance. Our team manages your month-end close, reconciliations, and internal controls, with a licensed CPA reviewing your financial statements and signing off on compliance accuracy.</p>
 </div>
 </div>
 </div>
@@ -511,7 +506,7 @@
                 Ready for stress-free books?
               </h2>
 <p class="font-body-lg text-body-lg text-secondary-fixed mb-6 leading-relaxed">
-                Book a free 15-minute books review with our accredited CPAs. We'll identify upcoming statutory deadlines, discover tax savings, and optimize your filing cadence without any obligation.
+                Book a free 20-minute books review with our accredited CPAs. We'll identify upcoming statutory deadlines, discover tax savings, and optimize your filing cadence without any obligation.
               </p>
 <div class="space-y-3 mb-6">
 <div class="flex items-center gap-3 text-secondary-fixed font-body-sm">
@@ -536,28 +531,28 @@
 <!-- Right Interactive Form Column -->
 <div class="lg:col-span-6">
 <div class="bg-surface-container-lowest rounded-xl p-8 shadow-lg text-on-surface">
-<h3 class="font-headline-md text-headline-md text-primary mb-1">Request Free 15-Min Review</h3>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Request Free 20-Min Review</h3>
 <p class="font-body-sm text-outline mb-6">Fill in your basic details and our compliance team will reach out within 2 business hours.</p>
 <form id="home-consult-form" class="space-y-4" data-cb-validate onsubmit="event.preventDefault(); handleHomeConsultSubmit(this);">
 <div>
-<label class="block font-label-md text-primary mb-1.5" for="fullName">Full Name</label>
+<label class="block font-label-md text-primary mb-1.5" for="homeFullName">Full Name</label>
 <div class="relative">
-<span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[20px]">person</span>
-<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all font-body-md text-on-surface placeholder:text-outline/60" id="fullName" placeholder="e.g. Maria Santos, CPA" required="" type="text">
+<span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[20px]" aria-hidden="true">person</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all font-body-md text-on-surface placeholder:text-outline/60" id="homeFullName" name="fullName" placeholder="e.g. Maria Santos, CPA" required type="text">
 </div>
 </div>
 <div>
-<label class="block font-label-md text-primary mb-1.5" for="contactInfo">Email or Phone Number</label>
+<label class="block font-label-md text-primary mb-1.5" for="homeContactInfo">Email or Phone Number</label>
 <div class="relative">
-<span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[20px]">mail</span>
-<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all font-body-md text-on-surface placeholder:text-outline/60" id="contactInfo" placeholder="maria@example.com or +63 917 123 4567" required="" type="text">
+<span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[20px]" aria-hidden="true">mail</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all font-body-md text-on-surface placeholder:text-outline/60" id="homeContactInfo" name="contactInfo" placeholder="maria@example.com or +63 917 123 4567" required type="text">
 </div>
 </div>
 <div>
-<label class="block font-label-md text-primary mb-1.5" for="businessStructure">Business Structure</label>
+<label class="block font-label-md text-primary mb-1.5" for="homeBusinessStructure">Business Structure</label>
 <div class="relative">
-<span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[20px]">business</span>
-<select class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all font-body-md text-on-surface" id="businessStructure">
+<span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[20px]" aria-hidden="true">business</span>
+<select class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all font-body-md text-on-surface" id="homeBusinessStructure" name="businessStructure">
 <option value="solo">Solo Freelancer / Individual Professional</option>
 <option value="opc">One Person Corporation (OPC)</option>
 <option value="partnership">General or Limited Partnership</option>
@@ -568,14 +563,12 @@
 </div>
 <div class="pt-2">
 <button class="w-full bg-secondary text-on-secondary hover:bg-secondary-container py-3.5 rounded-lg font-label-md transition-all duration-200 shadow-md flex items-center justify-center gap-2 active:scale-[0.98]" type="submit">
-<span class="material-symbols-outlined text-[20px]">send</span>
-<span>Request Free 15-Min Review</span>
+<span class="material-symbols-outlined text-[20px]" aria-hidden="true">send</span>
+<span>Request Free 20-Min Review</span>
 </button>
 </div>
 </form>
-<p class="text-center font-label-sm text-outline mt-4">
-                  No payment method required • Instant confirmation
-                </p>
+
 </div>
 </div>
 </div>
@@ -584,73 +577,81 @@
 </section>
 </main>
 <!-- Shared Component: Footer -->
-<footer class="bg-primary dark:bg-tertiary border-t border-outline/30 text-on-primary">
-<div class="w-full px-gutter py-space-xl max-w-7xl mx-auto flex flex-col gap-space-lg">
-<!-- Top Grid: Brand + 4 Links Columns -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-8 border-b border-primary-container">
-<!-- Brand Info Column -->
-<div class="lg:col-span-2 flex flex-col gap-4">
-<a href="index.html" class="inline-block"><img src="assets/logo.png" alt="ClearBooks Advisory" class="h-7 w-auto brightness-0 invert"></a>
-<p class="font-body-sm text-secondary-fixed max-w-sm">
-            Accredited Philippine CPAs and certified tax compliance agents delivering transparent, stress-free accounting for solo professionals, growing SMEs, and enterprise entities.
-          </p>
-<div class="flex items-center gap-3 text-secondary-fixed">
-<a aria-label="Facebook" class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center hover:bg-secondary transition-colors duration-150" href="http://facebook.com" rel="noopener noreferrer" target="_blank">
-<span class="material-symbols-outlined text-[18px]">public</span>
-</a>
-<a aria-label="Instagram" class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center hover:bg-secondary transition-colors duration-150" href="http://instagram.com" rel="noopener noreferrer" target="_blank">
-<span class="material-symbols-outlined text-[18px]">photo_camera</span>
-</a>
-<a aria-label="Twitter" class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center hover:bg-secondary transition-colors duration-150" href="http://twitter.com" rel="noopener noreferrer" target="_blank">
-<span class="material-symbols-outlined text-[18px]">alternate_email</span>
-</a>
-</div>
-</div>
-<!-- Links Column 1: Packages -->
-<div class="flex flex-col gap-3">
-<h4 class="font-label-md text-on-primary font-bold tracking-wide uppercase">Packages</h4>
-<ul class="space-y-2 font-body-sm text-on-primary-container">
-<li><a class="hover:text-secondary-fixed transition-colors duration-150" href="#freelancers">Freelancer Packages</a></li>
-<li><a class="hover:text-secondary-fixed transition-colors duration-150" href="#smbs">Small Business Essentials</a></li>
-<li><a class="hover:text-secondary-fixed transition-colors duration-150" href="corporate-compliance.html">Corporate Bookkeeping</a></li>
-<li><a class="hover:text-secondary-fixed transition-colors duration-150" href="how-we-do-business.html">Business Registration</a></li>
-<li><a class="hover:text-secondary-fixed transition-colors duration-150" href="contact.html">Custom Advisory</a></li>
-</ul>
-</div>
-<!-- Links Column 2: Compliance & Guides -->
-<div class="flex flex-col gap-3">
-<h4 class="font-label-md text-on-primary font-bold tracking-wide uppercase">Compliance</h4>
-<ul class="space-y-2 font-body-sm text-on-primary-container">
-<li><a class="hover:text-secondary-fixed transition-colors duration-150" href="bir-compliance-guide.html">BIR Compliance Guide</a></li>
-<li><a class="hover:text-secondary-fixed transition-colors duration-150" href="sec-disclosures.html">SEC Statutory Disclosures</a></li>
-<li><a class="hover:text-secondary-fixed transition-colors duration-150" href="bir-compliance-guide.html#calendar-matrix">Philippine Tax Calendar 2025</a></li>
-<li><a class="hover:text-secondary-fixed transition-colors duration-150" href="efps-portal-guide.html">eFPS Step-by-Step Portal</a></li>
-<li><a class="hover:text-secondary-fixed transition-colors duration-150" href="bir-compliance-guide.html#calendar-matrix">Form 1701Q / 2551Q Filing</a></li>
-</ul>
-</div>
-<!-- Links Column 3: Firm & Legal -->
-<div class="flex flex-col gap-3">
-<h4 class="font-label-md text-on-primary font-bold tracking-wide uppercase">Firm &amp; Legal</h4>
-<ul class="space-y-2 font-body-sm text-on-primary-container">
-<li><a class="hover:text-secondary-fixed transition-colors duration-150" href="privacy-policy.html">Privacy Policy</a></li>
-<li><a class="hover:text-secondary-fixed transition-colors duration-150" href="terms-of-service.html">Terms of Service</a></li>
-<li><a class="hover:text-secondary-fixed transition-colors duration-150" href="contact.html">Contact Support</a></li>
-<li><a class="hover:text-secondary-fixed transition-colors duration-150" href="cpa-credentials.html">CPA Accreditation Credentials</a></li>
-<li><a class="hover:text-secondary-fixed transition-colors duration-150" href="privacy-policy.html#ra-10173">RA 10173 Compliance Note</a></li>
-</ul>
-</div>
-</div>
-<!-- Bottom Bar: Accreditation Details and Copyright Text from JSON -->
-<div class="flex flex-col md:flex-row items-center justify-between gap-4 text-on-primary-container font-body-sm">
-<p class="text-center md:text-left text-[13px]">
-          © 2026 ClearBooks Advisory All rights reserved.</p>
-<div class="flex items-center gap-6 font-label-sm">
-<a class="hover:text-secondary-fixed transition-colors duration-150" href="privacy-policy.html">Privacy Policy</a>
-<a class="hover:text-secondary-fixed transition-colors duration-150" href="terms-of-service.html">Terms of Service</a>
-<a class="hover:text-secondary-fixed transition-colors duration-150" href="security.html">Security</a>
-</div>
-</div>
-</div>
+<footer class="w-full bg-[#001428] text-white border-t border-[#74777e]/30 mt-auto">
+  <div class="w-full px-6 py-12 max-w-7xl mx-auto flex flex-col gap-8">
+    <!-- Main Footer Architecture (4 Columns) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-10 border-b border-[#0f2942]">
+      <!-- Column 1: Brand, Positioning & Credentials -->
+      <div class="lg:col-span-4 flex flex-col gap-4">
+        <a href="index.html" class="inline-block w-fit">
+          <img src="assets/logo.png" alt="ClearBooks Advisory" class="h-7 w-auto brightness-0 invert">
+        </a>
+        <p class="text-sm text-[#b0c9e8] leading-relaxed">
+          PRC-accredited CPAs handling your Philippine bookkeeping, BIR tax filings, and SEC compliance.
+        </p>
+        <div class="flex flex-wrap items-center gap-2 pt-1">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#0f2942] border border-[#7991af]/30 text-xs font-medium text-[#d1e4ff]">
+            <span class="material-symbols-outlined text-[14px]" aria-hidden="true">verified</span>
+            PRC-Accredited CPAs
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#0f2942] border border-[#7991af]/30 text-xs font-medium text-[#d1e4ff]">
+            <span class="material-symbols-outlined text-[14px]" aria-hidden="true">shield</span>
+            BIR-Accredited Tax Practitioners
+          </span>
+        </div>
+      </div>
+
+      <!-- Column 2: Core Services -->
+      <div class="lg:col-span-3">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Core Services</h4>
+        <ul class="space-y-2.5 text-sm text-[#b0c9e8]">
+          <li><a class="hover:text-white transition-colors duration-150" href="index.html#services">Monthly Bookkeeping &amp; Tax Compliance</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="bir-compliance-guide.html#audit-shield">Catch-Up Accounting &amp; BIR Open Cases</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="sec-disclosures.html">SEC &amp; DTI Business Registration</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="corporate-compliance.html">Enterprise &amp; Controllership</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Company & Resources -->
+      <div class="lg:col-span-2">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Company &amp; Resources</h4>
+        <ul class="space-y-2.5 text-sm text-[#b0c9e8]">
+          <li><a class="hover:text-white transition-colors duration-150" href="cpa-credentials.html">Our Team</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="how-we-do-business.html">Our Process</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="index.html#packages">Retainer Packages</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="bir-compliance-guide.html">Tax Filing Guide</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact & Direct Action -->
+      <div class="lg:col-span-3 flex flex-col gap-3.5">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white">Contact &amp; Direct Action</h4>
+        <p class="text-xs text-[#b0c9e8] flex items-start gap-1.5 leading-relaxed">
+          <span class="material-symbols-outlined text-[15px] shrink-0 mt-0.5" aria-hidden="true">schedule</span>
+          <span>100% Remote Advisory Desk<br>Mon–Fri, 9:00 AM – 6:00 PM PHT</span>
+        </p>
+        <div>
+          <div class="text-xs text-[#7991af] mb-0.5">Email</div>
+          <a class="text-sm text-[#d1e4ff] hover:text-white font-medium break-all transition-colors duration-150" href="mailto:inquiry@clearbooksadvisory.online">inquiry@clearbooksadvisory.online</a>
+        </div>
+        <div class="pt-1">
+          <button type="button" onclick="cbOpenScheduleCallModal()" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#d1e4ff] text-[#001428] hover:bg-white text-sm font-semibold transition-colors duration-150 shadow-sm">
+            <span>Schedule a Consultation &rarr;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Legal & Compliance Bar -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#7991af]">
+      <p class="text-center md:text-left">© 2026 ClearBooks Advisory. All rights reserved.</p>
+      <div class="flex flex-wrap items-center justify-center gap-2">
+        <a class="hover:text-white transition-colors duration-150" href="privacy-policy.html">Privacy Policy</a>
+        <span aria-hidden="true">•</span>
+        <a class="hover:text-white transition-colors duration-150" href="terms-of-service.html">Terms of Engagement</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 
@@ -662,7 +663,7 @@
         <span class="material-symbols-outlined" aria-hidden="true">check_circle</span>
       </div>
       <div>
-        <h2 id="home-consult-dialog-title" class="font-bold text-primary text-lg">Consultation Confirmed</h2>
+        <h2 id="home-consult-dialog-title" class="font-bold text-primary text-lg">You’re on the calendar!</h2>
         <p class="text-xs text-on-surface-variant">48-Hour CPA Advisory SLA</p>
       </div>
     </div>
@@ -677,13 +678,18 @@
   </div>
 </dialog>
 <script>
+async function cbSubmitModalConsult(form) {
+  document.getElementById("schedule-call-dialog").close();
+  await handleHomeConsultSubmit(form);
+}
+
 async function handleHomeConsultSubmit(form) {
-  const name = (form.querySelector("#fullName") || form.querySelector("#modalFullName"))?.value || "Client";
-  const contact = (form.querySelector("#contactInfo") || form.querySelector("#modalContactInfo"))?.value || "your email";
-  const structure = (form.querySelector("#businessStructure") || form.querySelector("#modalBusinessStructure"))?.value || "your entity";
+  const name = form.querySelector("[name='fullName']")?.value || "Client";
+  const contact = form.querySelector("[name='contactInfo']")?.value || "your email";
+  const structure = form.querySelector("[name='businessStructure']")?.value || "your entity";
   if (window.cbSubmitConsultationToSheet) {
     await window.cbSubmitConsultationToSheet({
-      formType: form.id === "modal-consult-form" ? "Schedule a Call Modal" : "Homepage 15-Min Review",
+      formType: form.id === "modal-consult-form" ? "Schedule a Call Modal" : "Homepage 20-Min Review",
       fullName: name,
       contact: contact,
       businessStructure: structure,
@@ -692,116 +698,10 @@ async function handleHomeConsultSubmit(form) {
     });
   }
   const summary = document.getElementById("home-consult-summary");
-  summary.textContent = `Thank you, ${name}. A PRC-accredited ClearBooks CPA will reach out via ${contact} within 2 business hours to review your ${structure} compliance setup.`;
+  summary.textContent = "We’ll send you a confirmation email with your meeting link. If you have recent BIR filings or financial questions you’d like us to look at beforehand, simply reply to that email—our team will review them ahead of our call.";
   document.getElementById("home-consult-dialog").showModal();
   form.reset();
 }
-function _unusedOldSubmit(form) {
-  const name = (form.querySelector("#fullName") || form.querySelector("#modalFullName"))?.value || "Client";
-  const contact = (form.querySelector("#contactInfo") || form.querySelector("#modalContactInfo"))?.value || "your email";
-  const structure = (form.querySelector("#businessStructure") || form.querySelector("#modalBusinessStructure"))?.value || "your entity";
-  const summary = document.getElementById("home-consult-summary");
-  summary.textContent = `Thank you, ${name}. A PRC-accredited ClearBooks CPA will reach out via ${contact} within 2 business hours to review your ${structure} compliance setup.`;
-  document.getElementById("home-consult-dialog").showModal();
-  form.reset();
-}
-function _unusedOldSubmit(form) {
-  const name = form.querySelector("#fullName")?.value || "Client";
-  const contact = form.querySelector("#contactInfo")?.value || "your email";
-  const structure = form.querySelector("#businessStructure")?.value || "your entity";
-  const summary = document.getElementById("home-consult-summary");
-  summary.textContent = `Thank you, ${name}. A PRC-accredited ClearBooks CPA will reach out via ${contact} within 2 business hours to review your ${structure} compliance setup.`;
-  document.getElementById("home-consult-dialog").showModal();
-  form.reset();
-}
-</script>
-
-
-<dialog id="schedule-call-dialog" closedby="any" aria-labelledby="schedule-call-title" class="w-full max-w-5xl rounded-2xl border border-outline/30 bg-primary p-0 shadow-2xl text-on-primary">
-  <div class="p-6 sm:p-8 lg:p-12 relative overflow-hidden">
-    <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-secondary opacity-20 blur-3xl pointer-events-none"></div>
-    <button type="button" onclick="document.getElementById('schedule-call-dialog').close()" aria-label="Close modal" class="absolute top-4 right-4 z-20 p-2 rounded-lg bg-primary-container text-secondary-fixed hover:bg-secondary hover:text-white transition-colors">
-      <span class="material-symbols-outlined" aria-hidden="true">close</span>
-    </button>
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
-      <div class="lg:col-span-6 flex flex-col justify-center text-on-primary">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-container text-secondary-fixed font-label-sm w-fit mb-4 border border-outline-variant/20">
-          <span class="material-symbols-outlined text-[16px]" aria-hidden="true">calendar_today</span>
-          <span>Direct CPA Access</span>
-        </div>
-        <h2 id="schedule-call-title" class="font-headline-xl text-headline-xl font-bold tracking-tight mb-4 text-on-primary">
-          Ready for stress-free books?
-        </h2>
-        <p class="font-body-lg text-body-lg text-secondary-fixed mb-6 leading-relaxed">
-          Book a free 15-minute books review with our accredited CPAs. We'll identify upcoming statutory deadlines, discover tax savings, and optimize your filing cadence without any obligation.
-        </p>
-        <div class="space-y-3 mb-6">
-          <div class="flex items-center gap-3 text-secondary-fixed font-body-sm">
-            <span class="material-symbols-outlined text-secondary-container text-[20px]" aria-hidden="true">check_circle</span>
-            <span>Confidential assessment of current BIR tax status</span>
-          </div>
-          <div class="flex items-center gap-3 text-secondary-fixed font-body-sm">
-            <span class="material-symbols-outlined text-secondary-container text-[20px]" aria-hidden="true">check_circle</span>
-            <span>Custom package recommendations tailored to gross revenue</span>
-          </div>
-          <div class="flex items-center gap-3 text-secondary-fixed font-body-sm">
-            <span class="material-symbols-outlined text-secondary-container text-[20px]" aria-hidden="true">check_circle</span>
-            <span>Direct consultation with licensed Philippine tax practitioners</span>
-          </div>
-        </div>
-        <div class="flex items-start gap-2.5 pt-4 border-t border-primary-container text-on-primary-container text-[12px] font-body-sm">
-          <span class="material-symbols-outlined text-[16px] shrink-0 mt-0.5" aria-hidden="true">privacy_tip</span>
-          <span>ClearBooks Advisory adheres strictly to the Philippine Data Privacy Act of 2012 (RA 10173). Your accounting records remain private and encrypted.</span>
-        </div>
-      </div>
-      <div class="lg:col-span-6">
-        <div class="bg-surface-container-lowest rounded-xl p-6 sm:p-8 shadow-lg text-on-surface">
-          <h3 class="font-headline-md text-headline-md text-primary mb-1">Request Free 15-Min Review</h3>
-          <p class="font-body-sm text-outline mb-6">Fill in your basic details and our compliance team will reach out within 2 business hours.</p>
-          <form id="modal-consult-form" class="space-y-4" data-cb-validate onsubmit="event.preventDefault(); document.getElementById('schedule-call-dialog').close(); handleHomeConsultSubmit(this);">
-            <div>
-              <label class="block font-label-md text-primary mb-1.5" for="modalFullName">Full Name</label>
-              <div class="relative">
-                <span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[20px]" aria-hidden="true">person</span>
-                <input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all font-body-md text-on-surface placeholder:text-outline/60" id="modalFullName" placeholder="e.g. Maria Santos, CPA" required type="text" autofocus>
-              </div>
-            </div>
-            <div>
-              <label class="block font-label-md text-primary mb-1.5" for="modalContactInfo">Email or Phone Number</label>
-              <div class="relative">
-                <span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[20px]" aria-hidden="true">mail</span>
-                <input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all font-body-md text-on-surface placeholder:text-outline/60" id="modalContactInfo" placeholder="maria@example.com or +63 917 123 4567" required type="text">
-              </div>
-            </div>
-            <div>
-              <label class="block font-label-md text-primary mb-1.5" for="modalBusinessStructure">Business Structure</label>
-              <div class="relative">
-                <span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[20px]" aria-hidden="true">business</span>
-                <select class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all font-body-md text-on-surface" id="modalBusinessStructure">
-                  <option value="solo">Solo Freelancer / Individual Professional</option>
-                  <option value="opc">One Person Corporation (OPC)</option>
-                  <option value="partnership">General or Limited Partnership</option>
-                  <option value="corporation">Domestic Corporation / SME</option>
-                  <option value="foreign">Foreign Corporation Branch / Representative Office</option>
-                </select>
-              </div>
-            </div>
-            <div class="pt-2">
-              <button class="w-full bg-secondary text-on-secondary hover:bg-secondary-container py-3.5 rounded-lg font-label-md transition-all duration-200 shadow-md flex items-center justify-center gap-2 active:scale-[0.98]" type="submit">
-                <span class="material-symbols-outlined text-[20px]" aria-hidden="true">send</span>
-                <span>Request Free 15-Min Review</span>
-              </button>
-            </div>
-          </form>
-          <p class="text-center font-label-sm text-outline mt-4">
-            No payment method required • Instant confirmation
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</dialog>
-<script>
 function openScheduleCallModal(defaultStructure) {
   const dialog = document.getElementById("schedule-call-dialog");
   const select = document.getElementById("modalBusinessStructure");
@@ -827,7 +727,7 @@ function openScheduleCallModal(defaultStructure) {
           Ready for stress-free books?
         </h2>
         <p class="font-body-lg text-body-lg text-secondary-fixed mb-6 leading-relaxed">
-          Book a free 15-minute books review with our accredited CPAs. We'll identify upcoming statutory deadlines, discover tax savings, and optimize your filing cadence without any obligation.
+          Book a free 20-minute books review with our accredited CPAs. We'll identify upcoming statutory deadlines, discover tax savings, and optimize your filing cadence without any obligation.
         </p>
         <div class="space-y-3 mb-6">
           <div class="flex items-center gap-3 text-secondary-fixed font-body-sm">
@@ -850,46 +750,44 @@ function openScheduleCallModal(defaultStructure) {
       </div>
       <div class="lg:col-span-6">
         <div class="bg-surface-container-lowest rounded-xl p-6 sm:p-8 shadow-lg text-on-surface">
-          <h3 class="font-headline-md text-headline-md text-primary mb-1">Request Free 15-Min Review</h3>
+          <h3 class="font-headline-md text-headline-md text-primary mb-1">Request Free 20-Min Review</h3>
           <p class="font-body-sm text-outline mb-6">Fill in your basic details and our compliance team will reach out within 2 business hours.</p>
-          <form id="modal-consult-form" class="space-y-4" data-cb-validate onsubmit="event.preventDefault(); document.getElementById('schedule-call-dialog').close(); handleHomeConsultSubmit(this);">
-            <div>
-              <label class="block font-label-md text-primary mb-1.5" for="modalFullName">Full Name</label>
-              <div class="relative">
-                <span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[20px]" aria-hidden="true">person</span>
-                <input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all font-body-md text-on-surface placeholder:text-outline/60" id="modalFullName" placeholder="e.g. Maria Santos, CPA" required type="text" autofocus>
-              </div>
-            </div>
-            <div>
-              <label class="block font-label-md text-primary mb-1.5" for="modalContactInfo">Email or Phone Number</label>
-              <div class="relative">
-                <span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[20px]" aria-hidden="true">mail</span>
-                <input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all font-body-md text-on-surface placeholder:text-outline/60" id="modalContactInfo" placeholder="maria@example.com or +63 917 123 4567" required type="text">
-              </div>
-            </div>
-            <div>
-              <label class="block font-label-md text-primary mb-1.5" for="modalBusinessStructure">Business Structure</label>
-              <div class="relative">
-                <span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[20px]" aria-hidden="true">business</span>
-                <select class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all font-body-md text-on-surface" id="modalBusinessStructure">
-                  <option value="solo">Solo Freelancer / Individual Professional</option>
-                  <option value="opc">One Person Corporation (OPC)</option>
-                  <option value="partnership">General or Limited Partnership</option>
-                  <option value="corporation">Domestic Corporation / SME</option>
-                  <option value="foreign">Foreign Corporation Branch / Representative Office</option>
-                </select>
-              </div>
-            </div>
-            <div class="pt-2">
-              <button class="w-full bg-secondary text-on-secondary hover:bg-secondary-container py-3.5 rounded-lg font-label-md transition-all duration-200 shadow-md flex items-center justify-center gap-2 active:scale-[0.98]" type="submit">
-                <span class="material-symbols-outlined text-[20px]" aria-hidden="true">send</span>
-                <span>Request Free 15-Min Review</span>
-              </button>
-            </div>
-          </form>
-          <p class="text-center font-label-sm text-outline mt-4">
-            No payment method required • Instant confirmation
-          </p>
+          <form id="modal-consult-form" class="space-y-4" data-cb-validate onsubmit="event.preventDefault(); cbSubmitModalConsult(this);">
+<div>
+<label class="block font-label-md text-primary mb-1.5" for="modalFullName">Full Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[20px]" aria-hidden="true">person</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all font-body-md text-on-surface placeholder:text-outline/60" id="modalFullName" name="fullName" placeholder="e.g. Maria Santos, CPA" required type="text" autofocus>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-primary mb-1.5" for="modalContactInfo">Email or Phone Number</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[20px]" aria-hidden="true">mail</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all font-body-md text-on-surface placeholder:text-outline/60" id="modalContactInfo" name="contactInfo" placeholder="maria@example.com or +63 917 123 4567" required type="text">
+</div>
+</div>
+<div>
+<label class="block font-label-md text-primary mb-1.5" for="modalBusinessStructure">Business Structure</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[20px]" aria-hidden="true">business</span>
+<select class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all font-body-md text-on-surface" id="modalBusinessStructure" name="businessStructure">
+<option value="solo">Solo Freelancer / Individual Professional</option>
+<option value="opc">One Person Corporation (OPC)</option>
+<option value="partnership">General or Limited Partnership</option>
+<option value="corporation">Domestic Corporation / SME</option>
+<option value="foreign">Foreign Corporation Branch / Representative Office</option>
+</select>
+</div>
+</div>
+<div class="pt-2">
+<button class="w-full bg-secondary text-on-secondary hover:bg-secondary-container py-3.5 rounded-lg font-label-md transition-all duration-200 shadow-md flex items-center justify-center gap-2 active:scale-[0.98]" type="submit">
+<span class="material-symbols-outlined text-[20px]" aria-hidden="true">send</span>
+<span>Request Free 20-Min Review</span>
+</button>
+</div>
+</form>
+          
         </div>
       </div>
     </div>
@@ -898,8 +796,9 @@ function openScheduleCallModal(defaultStructure) {
 <script>
 function openScheduleCallModal(defaultStructure) {
   const dialog = document.getElementById("schedule-call-dialog");
-  const select = document.getElementById("modalBusinessStructure");
-  if (select && defaultStructure) select.value = defaultStructure;
+  const select = document.getElementById("modalEntityType");
+  if (select && defaultStructure === "solo") select.value = "Freelancer / Self-Employed Professional";
+  if (select && defaultStructure === "corporation") select.value = "Domestic Corporation (SEC)";
   dialog.showModal();
 }
 </script>

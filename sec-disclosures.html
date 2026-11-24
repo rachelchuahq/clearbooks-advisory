@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="assets/clearbooks.css">
   <script src="assets/clearbooks.js" defer></script>
 </head>
-<body class="bg-surface text-on-surface font-sans antialiased selection:bg-secondary/20">
+<body class="min-h-screen flex flex-col bg-surface text-on-surface font-sans antialiased selection:bg-secondary/20">
   <header class="w-full bg-white shadow-sm border-b border-[#c3c6ce]/30 sticky top-0 z-50">
   <div class="flex justify-between items-center w-full px-6 max-w-7xl mx-auto h-20">
     <!-- Brand Logo -->
@@ -51,7 +51,7 @@
     <!-- Desktop Nav Links -->
     <nav class="hidden md:flex items-center gap-7" aria-label="Primary">
       <a class="text-[#43474d] font-medium py-1 hover:text-[#1d4ed8] transition-colors duration-150 text-sm tracking-[0.01em]" href="index.html">Home</a>
-      <a class="text-[#43474d] font-medium py-1 hover:text-[#1d4ed8] transition-colors duration-150 text-sm tracking-[0.01em]" href="how-we-do-business.html">Why Us</a>
+      <a class="text-[#43474d] font-medium py-1 hover:text-[#1d4ed8] transition-colors duration-150 text-sm tracking-[0.01em]" href="how-we-do-business.html">Our Process</a>
       <a class="text-[#43474d] font-medium py-1 hover:text-[#1d4ed8] transition-colors duration-150 text-sm tracking-[0.01em]" href="contact.html">Contact Us</a>
     </nav>
 
@@ -72,8 +72,7 @@
 
   <ul id="mobile-nav-menu" popover="auto" class="space-y-1 text-sm font-medium text-[#0d1c2f]">
     <li><a href="index.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Home</a></li>
-    <li></li>
-    <li><a href="how-we-do-business.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Why Us</a></li>
+    <li><a href="how-we-do-business.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Our Process</a></li>
     <li><a href="bir-compliance-guide.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">BIR Compliance Guide</a></li>
     <li><a href="corporate-compliance.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Corporate &amp; SME Compliance</a></li>
     <li><a href="contact.html" class="block px-3 py-2.5 rounded-lg hover:bg-[#eff4ff]">Contact Us</a></li>
@@ -119,8 +118,7 @@
             <p class="text-sm text-on-surface-variant mt-1">Our corporate secretarial &amp; CPA team handles amnesty applications, GIS amendments, and AFS coordination.</p>
           </div>
           <div class="flex flex-wrap gap-3 shrink-0">
-            <a href="corporate-compliance.html#consultation-form" class="px-5 py-3 rounded-lg bg-secondary text-white text-sm font-semibold hover:bg-secondary-container">Consult Corporate Team</a>
-            <button type="button" onclick="cbOpenLeadGuideModal()" class="px-5 py-3 rounded-lg border border-outline-variant text-primary text-sm font-semibold hover:bg-surface-container-low">Download Checklist</button>
+            <button type="button" onclick="openScheduleCallModal('corporation')" class="px-5 py-3 rounded-lg bg-secondary text-white text-sm font-semibold hover:bg-secondary-container">Consult Corporate Team</button>
           </div>
         </div>
         
@@ -128,46 +126,210 @@
     </section>
   </main>
 
-  <footer class="bg-primary text-slate-300 border-t border-white/10 py-14">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
-        <div class="space-y-3">
-          <a href="index.html" class="inline-block"><img src="assets/logo.png" alt="ClearBooks Advisory" class="h-7 w-auto brightness-0 invert"></a>
-          <p class="text-xs text-slate-400 leading-relaxed">Meticulous Philippine bookkeeping, BIR tax compliance, and SEC corporate advisory led by PRC-accredited CPAs.</p>
-        </div>
-        <div>
-          <h3 class="text-white font-semibold text-sm mb-3">Practice Areas</h3>
-          <ul class="space-y-2 text-xs">
-            <li><a href="index.html#freelancers" class="hover:text-white">Freelancer Packages</a></li>
-            <li><a href="index.html#smbs" class="hover:text-white">Small Business Essentials</a></li>
-            <li><a href="corporate-compliance.html" class="hover:text-white">Corporate Bookkeeping</a></li>
-            <li><a href="how-we-do-business.html" class="hover:text-white">How We Do Business</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-white font-semibold text-sm mb-3">Compliance Resources</h3>
-          <ul class="space-y-2 text-xs">
-            <li><a href="bir-compliance-guide.html" class="hover:text-white">BIR Compliance Guide</a></li>
-            <li><a href="sec-disclosures.html" class="hover:text-white">SEC Statutory Disclosures</a></li>
-            <li><a href="efps-portal-guide.html" class="hover:text-white">eFPS Step-by-Step Portal</a></li>
-            <li><a href="cpa-credentials.html" class="hover:text-white">CPA Accreditation Credentials</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-white font-semibold text-sm mb-3">Legal &amp; Support</h3>
-          <ul class="space-y-2 text-xs">
-            <li><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a></li>
-            <li><a href="terms-of-service.html" class="hover:text-white">Terms of Service</a></li>
-            <li><a href="security.html" class="hover:text-white">Security</a></li>
-            <li><a href="contact.html" class="hover:text-white">Contact Support</a></li>
-          </ul>
+  <footer class="w-full bg-[#001428] text-white border-t border-[#74777e]/30 mt-auto">
+  <div class="w-full px-6 py-12 max-w-7xl mx-auto flex flex-col gap-8">
+    <!-- Main Footer Architecture (4 Columns) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-10 border-b border-[#0f2942]">
+      <!-- Column 1: Brand, Positioning & Credentials -->
+      <div class="lg:col-span-4 flex flex-col gap-4">
+        <a href="index.html" class="inline-block w-fit">
+          <img src="assets/logo.png" alt="ClearBooks Advisory" class="h-7 w-auto brightness-0 invert">
+        </a>
+        <p class="text-sm text-[#b0c9e8] leading-relaxed">
+          PRC-accredited CPAs handling your Philippine bookkeeping, BIR tax filings, and SEC compliance.
+        </p>
+        <div class="flex flex-wrap items-center gap-2 pt-1">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#0f2942] border border-[#7991af]/30 text-xs font-medium text-[#d1e4ff]">
+            <span class="material-symbols-outlined text-[14px]" aria-hidden="true">verified</span>
+            PRC-Accredited CPAs
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#0f2942] border border-[#7991af]/30 text-xs font-medium text-[#d1e4ff]">
+            <span class="material-symbols-outlined text-[14px]" aria-hidden="true">shield</span>
+            BIR-Accredited Tax Practitioners
+          </span>
         </div>
       </div>
-      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-        <p>© 2026 ClearBooks Advisory All rights reserved.</p>
-        <p>RA 10173 Data Privacy Act Compliant</p>
+
+      <!-- Column 2: Core Services -->
+      <div class="lg:col-span-3">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Core Services</h4>
+        <ul class="space-y-2.5 text-sm text-[#b0c9e8]">
+          <li><a class="hover:text-white transition-colors duration-150" href="index.html#services">Monthly Bookkeeping &amp; Tax Compliance</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="bir-compliance-guide.html#audit-shield">Catch-Up Accounting &amp; BIR Open Cases</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="sec-disclosures.html">SEC &amp; DTI Business Registration</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="corporate-compliance.html">Enterprise &amp; Controllership</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Company & Resources -->
+      <div class="lg:col-span-2">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Company &amp; Resources</h4>
+        <ul class="space-y-2.5 text-sm text-[#b0c9e8]">
+          <li><a class="hover:text-white transition-colors duration-150" href="cpa-credentials.html">Our Team</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="how-we-do-business.html">Our Process</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="index.html#packages">Retainer Packages</a></li>
+          <li><a class="hover:text-white transition-colors duration-150" href="bir-compliance-guide.html">Tax Filing Guide</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact & Direct Action -->
+      <div class="lg:col-span-3 flex flex-col gap-3.5">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white">Contact &amp; Direct Action</h4>
+        <p class="text-xs text-[#b0c9e8] flex items-start gap-1.5 leading-relaxed">
+          <span class="material-symbols-outlined text-[15px] shrink-0 mt-0.5" aria-hidden="true">schedule</span>
+          <span>100% Remote Advisory Desk<br>Mon–Fri, 9:00 AM – 6:00 PM PHT</span>
+        </p>
+        <div>
+          <div class="text-xs text-[#7991af] mb-0.5">Email</div>
+          <a class="text-sm text-[#d1e4ff] hover:text-white font-medium break-all transition-colors duration-150" href="mailto:inquiry@clearbooksadvisory.online">inquiry@clearbooksadvisory.online</a>
+        </div>
+        <div class="pt-1">
+          <button type="button" onclick="cbOpenScheduleCallModal()" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#d1e4ff] text-[#001428] hover:bg-white text-sm font-semibold transition-colors duration-150 shadow-sm">
+            <span>Schedule a Consultation &rarr;</span>
+          </button>
+        </div>
       </div>
     </div>
-  </footer>
+
+    <!-- Bottom Legal & Compliance Bar -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#7991af]">
+      <p class="text-center md:text-left">© 2026 ClearBooks Advisory. All rights reserved.</p>
+      <div class="flex flex-wrap items-center justify-center gap-2">
+        <a class="hover:text-white transition-colors duration-150" href="privacy-policy.html">Privacy Policy</a>
+        <span aria-hidden="true">•</span>
+        <a class="hover:text-white transition-colors duration-150" href="terms-of-service.html">Terms of Engagement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<dialog id="schedule-call-dialog" closedby="any" aria-labelledby="schedule-call-title" class="w-full max-w-5xl rounded-2xl border border-outline/30 bg-[#001428] p-0 shadow-2xl text-white">
+  <div class="p-6 sm:p-8 lg:p-12 relative overflow-hidden">
+    <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-[#1d4ed8] opacity-20 blur-3xl pointer-events-none"></div>
+    <button type="button" onclick="document.getElementById('schedule-call-dialog').close()" aria-label="Close modal" class="absolute top-4 right-4 z-20 p-2 rounded-lg bg-[#0f2942] text-[#dce1ff] hover:bg-[#1d4ed8] hover:text-white transition-colors">
+      <span class="material-symbols-outlined" aria-hidden="true">close</span>
+    </button>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
+      <div class="lg:col-span-6 flex flex-col justify-center text-white">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0f2942] text-[#dce1ff] text-xs font-semibold w-fit mb-4 border border-white/15">
+          <span class="material-symbols-outlined text-[16px]" aria-hidden="true">calendar_today</span>
+          <span>Direct CPA Access</span>
+        </div>
+        <h2 id="schedule-call-title" class="text-3xl font-extrabold tracking-tight mb-4 text-white">
+          Ready for stress-free books?
+        </h2>
+        <p class="text-base text-[#dce1ff] mb-6 leading-relaxed">
+          Book a free 20-minute books review with our accredited CPAs. We'll identify upcoming statutory deadlines, discover tax savings, and optimize your filing cadence without any obligation.
+        </p>
+        <div class="space-y-3 mb-6 text-sm text-[#dce1ff]">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[#4069f2] text-[20px]" aria-hidden="true">check_circle</span>
+            <span>Confidential assessment of current BIR tax status</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[#4069f2] text-[20px]" aria-hidden="true">check_circle</span>
+            <span>Custom package recommendations tailored to gross revenue</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[#4069f2] text-[20px]" aria-hidden="true">check_circle</span>
+            <span>Direct consultation with licensed Philippine tax practitioners</span>
+          </div>
+        </div>
+        <div class="flex items-start gap-2.5 pt-4 border-t border-[#0f2942] text-[#b0c9e8] text-xs">
+          <span class="material-symbols-outlined text-[16px] shrink-0 mt-0.5" aria-hidden="true">privacy_tip</span>
+          <span>ClearBooks Advisory adheres strictly to the Philippine Data Privacy Act of 2012 (RA 10173). Your accounting records remain private and encrypted.</span>
+        </div>
+      </div>
+      <div class="lg:col-span-6">
+        <div class="bg-white rounded-xl p-6 sm:p-8 shadow-lg text-[#0d1c2f]">
+          <h3 class="text-xl font-bold text-[#001428] mb-1">Request Free 20-Min Review</h3>
+          <p class="text-sm text-[#74777e] mb-6">Fill in your basic details and our compliance team will reach out within 2 business hours.</p>
+          <form id="modal-consult-form" class="space-y-4" data-cb-validate onsubmit="event.preventDefault(); cbSubmitModalConsult(this);">
+            <div>
+              <label class="block text-xs font-semibold text-[#001428] mb-1.5" for="modalFullName">Full Name</label>
+              <div class="relative">
+                <span class="material-symbols-outlined absolute left-3 top-3 text-[#74777e] text-[20px]" aria-hidden="true">person</span>
+                <input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-[#c3c6ce] bg-white focus:border-[#1d4ed8] focus:ring-2 focus:ring-[#1d4ed8]/20 transition-all text-sm text-[#0d1c2f]" id="modalFullName" name="fullName" placeholder="e.g. Maria Santos, CPA" required type="text" autofocus>
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-[#001428] mb-1.5" for="modalContactInfo">Email or Phone Number</label>
+              <div class="relative">
+                <span class="material-symbols-outlined absolute left-3 top-3 text-[#74777e] text-[20px]" aria-hidden="true">mail</span>
+                <input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-[#c3c6ce] bg-white focus:border-[#1d4ed8] focus:ring-2 focus:ring-[#1d4ed8]/20 transition-all text-sm text-[#0d1c2f]" id="modalContactInfo" name="contactInfo" placeholder="maria@example.com or +63 917 123 4567" required type="text">
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-[#001428] mb-1.5" for="modalBusinessStructure">Business Structure</label>
+              <div class="relative">
+                <span class="material-symbols-outlined absolute left-3 top-3 text-[#74777e] text-[20px]" aria-hidden="true">business</span>
+                <select class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-[#c3c6ce] bg-white focus:border-[#1d4ed8] focus:ring-2 focus:ring-[#1d4ed8]/20 transition-all text-sm text-[#0d1c2f]" id="modalBusinessStructure" name="businessStructure">
+                  <option value="solo">Solo Freelancer / Individual Professional</option>
+                  <option value="opc">One Person Corporation (OPC)</option>
+                  <option value="partnership">General or Limited Partnership</option>
+                  <option value="corporation">Domestic Corporation / SME</option>
+                  <option value="foreign">Foreign Corporation Branch / Representative Office</option>
+                </select>
+              </div>
+            </div>
+            <div class="pt-2">
+              <button class="w-full bg-[#1d4ed8] text-white hover:bg-[#0039b5] py-3.5 rounded-lg font-semibold text-sm transition-all duration-200 shadow-md flex items-center justify-center gap-2" type="submit">
+                <span class="material-symbols-outlined text-[20px]" aria-hidden="true">send</span>
+                <span>Request Free 20-Min Review</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="sec-consult-confirm-dialog" closedby="any" aria-labelledby="sec-consult-confirm-title" class="w-full max-w-md rounded-xl border border-[#c3c6ce] bg-white p-6 shadow-2xl text-[#0d1c2f]">
+  <div class="flex items-start justify-between gap-4 mb-4">
+    <div class="flex items-center gap-2.5">
+      <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
+        <span class="material-symbols-outlined" aria-hidden="true">check_circle</span>
+      </div>
+      <div>
+        <h2 id="sec-consult-confirm-title" class="font-bold text-[#001428] text-lg">You’re on the calendar!</h2>
+        <p class="text-xs text-[#43474d]">48-Hour CPA Advisory SLA</p>
+      </div>
+    </div>
+    <button type="button" onclick="document.getElementById('sec-consult-confirm-dialog').close()" class="p-1 rounded-lg hover:bg-[#eff4ff]" aria-label="Close">
+      <span class="material-symbols-outlined" aria-hidden="true">close</span>
+    </button>
+  </div>
+  <p class="text-sm text-[#43474d] leading-relaxed mb-5">We’ll send you a confirmation email with your meeting link. If you have recent BIR filings or financial questions you’d like us to look at beforehand, simply reply to that email—our team will review them ahead of our call.</p>
+  <button type="button" onclick="document.getElementById('sec-consult-confirm-dialog').close()" class="w-full px-4 py-2.5 rounded-lg bg-[#1d4ed8] text-white text-sm font-semibold hover:bg-[#0039b5]">Done</button>
+</dialog>
+
+<script>
+function openScheduleCallModal(defaultStructure) {
+  const dialog = document.getElementById("schedule-call-dialog");
+  const select = document.getElementById("modalBusinessStructure");
+  if (select && defaultStructure) select.value = defaultStructure;
+  dialog.showModal();
+}
+
+async function cbSubmitModalConsult(form) {
+  const name = form.querySelector("[name='fullName']")?.value || "Client";
+  const contact = form.querySelector("[name='contactInfo']")?.value || "";
+  const structure = form.querySelector("[name='businessStructure']")?.value || "";
+  if (window.cbSubmitConsultationToSheet) {
+    await window.cbSubmitConsultationToSheet({
+      formType: "SEC Disclosures — Consult Corporate Team",
+      fullName: name,
+      contact: contact,
+      businessStructure: structure,
+      notes: "",
+      sourcePage: "sec-disclosures.html"
+    });
+  }
+  document.getElementById("schedule-call-dialog").close();
+  document.getElementById("sec-consult-confirm-dialog").showModal();
+  form.reset();
+}
+</script>
 </body>
 </html>

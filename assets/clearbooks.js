@@ -98,7 +98,7 @@
       'VERSION:2.0',
       'PRODID:-//ClearBooks Advisory//BIR Compliance Calendar//EN',
       'BEGIN:VEVENT',
-      'UID:bir-1601c-monthly@clearbooks.ph',
+      'UID:inquiry@clearbooksadvisory.online',
       'DTSTAMP:20250101T000000Z',
       'DTSTART;VALUE=DATE:20250110',
       'RRULE:FREQ=MONTHLY;BYMONTHDAY=10',
@@ -106,7 +106,7 @@
       'DESCRIPTION:Monthly Withholding Tax on Compensation & Expanded Withholding Tax remittance.',
       'END:VEVENT',
       'BEGIN:VEVENT',
-      'UID:bir-2550q-quarterly@clearbooks.ph',
+      'UID:inquiry@clearbooksadvisory.online',
       'DTSTAMP:20250101T000000Z',
       'DTSTART;VALUE=DATE:20250425',
       'RRULE:FREQ=MONTHLY;INTERVAL=3;BYMONTHDAY=25',
@@ -114,7 +114,7 @@
       'DESCRIPTION:Quarterly VAT or Percentage Tax filing deadline.',
       'END:VEVENT',
       'BEGIN:VEVENT',
-      'UID:bir-aitr-annual@clearbooks.ph',
+      'UID:inquiry@clearbooksadvisory.online',
       'DTSTAMP:20250101T000000Z',
       'DTSTART;VALUE=DATE:20250415',
       'SUMMARY:Annual Income Tax Return (1701/1702) Deadline (ClearBooks Advisory)',
@@ -194,7 +194,7 @@
     { title: 'SEC Statutory Disclosures (GIS & AFS)', url: 'sec-disclosures.html', desc: 'SEC eFAST, General Information Sheet, Audited Financial Statements & MC 28-2020.' },
     { title: 'eFPS Step-by-Step Portal Guide', url: 'efps-portal-guide.html', desc: 'Electronic Filing and Payment System enrollment, AAB banking & eAFS.' },
     { title: 'CPA Accreditation Credentials', url: 'cpa-credentials.html', desc: 'PRC Board of Accountancy, BIR Accreditation & SEC External Auditor standards.' },
-    { title: 'Contact Support & Book Consultation', url: 'contact.html', desc: 'Schedule a free 15-min diagnostic or message our Makati/BGC CPA team.' },
+    { title: 'Contact Support & Book Consultation', url: 'contact.html', desc: 'Schedule a free 20-min diagnostic or message our remote Philippine CPA team.' },
     { title: 'Privacy Policy & RA 10173 Compliance', url: 'privacy-policy.html', desc: 'Data Privacy Act of 2012 safeguards, encryption & DPO contact.' },
     { title: 'Terms of Service', url: 'terms-of-service.html', desc: 'ClearBooks Advisory engagement terms, 48-hour SLA & accuracy guarantee.' },
     { title: 'Security & Ledger Integrity', url: 'security.html', desc: 'AES-256 encryption, role-based access & audit trail architecture.' }
@@ -414,6 +414,132 @@
     d.querySelector('#cb-lead-success-view').classList.add('hidden');
     d.showModal();
     d.querySelector('#cb-lead-first-name')?.focus();
+  };
+
+  // 6c. Global "Ready for stress-free books?" Schedule a Consultation Modal
+  window.cbOpenScheduleCallModal = function (defaultStructure) {
+    const existing = document.getElementById('schedule-call-dialog');
+    if (existing) {
+      const sel = document.getElementById('modalBusinessStructure');
+      if (sel && defaultStructure) sel.value = defaultStructure;
+      existing.showModal();
+      return;
+    }
+
+    let dialog = document.getElementById('cb-global-schedule-dialog');
+    let confirmDialog = document.getElementById('cb-global-schedule-confirm');
+    if (!dialog) {
+      dialog = document.createElement('dialog');
+      dialog.id = 'cb-global-schedule-dialog';
+      dialog.setAttribute('closedby', 'any');
+      dialog.setAttribute('aria-labelledby', 'cb-global-schedule-title');
+      dialog.className = 'w-full max-w-5xl rounded-2xl border border-outline/30 bg-[#001428] p-0 shadow-2xl text-white';
+      dialog.innerHTML = `
+        <div class="p-6 sm:p-8 lg:p-12 relative overflow-hidden">
+          <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-[#1d4ed8] opacity-20 blur-3xl pointer-events-none"></div>
+          <button type="button" id="cb-global-sched-close" aria-label="Close modal" class="absolute top-4 right-4 z-20 p-2 rounded-lg bg-[#0f2942] text-[#dce1ff] hover:bg-[#1d4ed8] hover:text-white transition-colors">
+            <span class="material-symbols-outlined" aria-hidden="true">close</span>
+          </button>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
+            <div class="lg:col-span-6 flex flex-col justify-center text-white">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0f2942] text-[#dce1ff] text-xs font-semibold w-fit mb-4 border border-white/15">
+                <span class="material-symbols-outlined text-[16px]" aria-hidden="true">calendar_today</span>
+                <span>Direct CPA Access</span>
+              </div>
+              <h2 id="cb-global-schedule-title" class="text-3xl font-extrabold tracking-tight mb-4 text-white">Ready for stress-free books?</h2>
+              <p class="text-base text-[#dce1ff] mb-6 leading-relaxed">Book a free 20-minute books review with our accredited CPAs. We'll identify upcoming statutory deadlines, discover tax savings, and optimize your filing cadence without any obligation.</p>
+              <div class="space-y-3 mb-6 text-sm text-[#dce1ff]">
+                <div class="flex items-center gap-3"><span class="material-symbols-outlined text-[#4069f2] text-[20px]" aria-hidden="true">check_circle</span><span>Confidential assessment of current BIR tax status</span></div>
+                <div class="flex items-center gap-3"><span class="material-symbols-outlined text-[#4069f2] text-[20px]" aria-hidden="true">check_circle</span><span>Custom package recommendations tailored to gross revenue</span></div>
+                <div class="flex items-center gap-3"><span class="material-symbols-outlined text-[#4069f2] text-[20px]" aria-hidden="true">check_circle</span><span>Direct consultation with licensed Philippine tax practitioners</span></div>
+              </div>
+              <div class="flex items-start gap-2.5 pt-4 border-t border-[#0f2942] text-[#b0c9e8] text-xs">
+                <span class="material-symbols-outlined text-[16px] shrink-0 mt-0.5" aria-hidden="true">privacy_tip</span>
+                <span>ClearBooks Advisory adheres strictly to the Philippine Data Privacy Act of 2012 (RA 10173). Your accounting records remain private and encrypted.</span>
+              </div>
+            </div>
+            <div class="lg:col-span-6">
+              <div class="bg-white rounded-xl p-6 sm:p-8 shadow-lg text-[#0d1c2f]">
+                <h3 class="text-xl font-bold text-[#001428] mb-1">Request Free 20-Min Review</h3>
+                <p class="text-sm text-[#74777e] mb-6">Fill in your basic details and our compliance team will reach out within 2 business hours.</p>
+                <form id="cb-global-sched-form" class="space-y-4" data-cb-validate>
+                  <div>
+                    <label class="block text-xs font-semibold text-[#001428] mb-1.5" for="cbGlobalFullName">Full Name</label>
+                    <input class="w-full px-3.5 py-2.5 rounded-lg border border-[#c3c6ce] bg-white focus:border-[#1d4ed8] focus:ring-2 focus:ring-[#1d4ed8]/20 text-sm text-[#0d1c2f]" id="cbGlobalFullName" name="fullName" placeholder="e.g. Maria Santos, CPA" required type="text" autofocus>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-[#001428] mb-1.5" for="cbGlobalContactInfo">Email or Phone Number</label>
+                    <input class="w-full px-3.5 py-2.5 rounded-lg border border-[#c3c6ce] bg-white focus:border-[#1d4ed8] focus:ring-2 focus:ring-[#1d4ed8]/20 text-sm text-[#0d1c2f]" id="cbGlobalContactInfo" name="contactInfo" placeholder="maria@example.com or +63 917 123 4567" required type="text">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-[#001428] mb-1.5" for="cbGlobalBusinessStructure">Business Structure</label>
+                    <select class="w-full px-3.5 py-2.5 rounded-lg border border-[#c3c6ce] bg-white focus:border-[#1d4ed8] focus:ring-2 focus:ring-[#1d4ed8]/20 text-sm text-[#0d1c2f]" id="cbGlobalBusinessStructure" name="businessStructure">
+                      <option value="solo">Solo Freelancer / Individual Professional</option>
+                      <option value="opc">One Person Corporation (OPC)</option>
+                      <option value="partnership">General or Limited Partnership</option>
+                      <option value="corporation">Domestic Corporation / SME</option>
+                      <option value="foreign">Foreign Corporation Branch / Representative Office</option>
+                    </select>
+                  </div>
+                  <button class="w-full bg-[#1d4ed8] text-white hover:bg-[#0039b5] py-3.5 rounded-lg font-semibold text-sm transition-all shadow-md flex items-center justify-center gap-2" type="submit">
+                    <span class="material-symbols-outlined text-[20px]" aria-hidden="true">send</span>
+                    <span>Request Free 20-Min Review</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(dialog);
+
+      confirmDialog = document.createElement('dialog');
+      confirmDialog.id = 'cb-global-schedule-confirm';
+      confirmDialog.setAttribute('closedby', 'any');
+      confirmDialog.setAttribute('aria-labelledby', 'cb-global-confirm-title');
+      confirmDialog.className = 'w-full max-w-md rounded-xl border border-[#c3c6ce] bg-white p-6 shadow-2xl text-[#0d1c2f]';
+      confirmDialog.innerHTML = `
+        <div class="flex items-start justify-between gap-4 mb-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
+              <span class="material-symbols-outlined" aria-hidden="true">check_circle</span>
+            </div>
+            <div>
+              <h2 id="cb-global-confirm-title" class="font-bold text-[#001428] text-lg">You’re on the calendar!</h2>
+              <p class="text-xs text-[#43474d]">48-Hour CPA Advisory SLA</p>
+            </div>
+          </div>
+          <button type="button" id="cb-global-confirm-close" class="p-1 rounded-lg hover:bg-[#eff4ff]" aria-label="Close">
+            <span class="material-symbols-outlined" aria-hidden="true">close</span>
+          </button>
+        </div>
+        <p class="text-sm text-[#43474d] leading-relaxed mb-5">We’ll send you a confirmation email with your meeting link. If you have recent BIR filings or financial questions you’d like us to look at beforehand, simply reply to that email—our team will review them ahead of our call.</p>
+        <button type="button" id="cb-global-confirm-done" class="w-full px-4 py-2.5 rounded-lg bg-[#1d4ed8] text-white text-sm font-semibold hover:bg-[#0039b5]">Done</button>
+      `;
+      document.body.appendChild(confirmDialog);
+
+      dialog.querySelector('#cb-global-sched-close').addEventListener('click', () => dialog.close());
+      confirmDialog.querySelector('#cb-global-confirm-close').addEventListener('click', () => confirmDialog.close());
+      confirmDialog.querySelector('#cb-global-confirm-done').addEventListener('click', () => confirmDialog.close());
+      dialog.querySelector('#cb-global-sched-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        await window.cbSubmitConsultationToSheet({
+          formType: 'Footer — Schedule a Consultation',
+          fullName: form.querySelector('#cbGlobalFullName').value,
+          contact: form.querySelector('#cbGlobalContactInfo').value,
+          businessStructure: form.querySelector('#cbGlobalBusinessStructure').value,
+          notes: '',
+          sourcePage: window.location.pathname.split('/').pop() || 'index.html'
+        });
+        dialog.close();
+        confirmDialog.showModal();
+        form.reset();
+      });
+    }
+    const sel = dialog.querySelector('#cbGlobalBusinessStructure');
+    if (sel && defaultStructure) sel.value = defaultStructure;
+    dialog.showModal();
   };
 
   // 7. Highlight current page in nav
